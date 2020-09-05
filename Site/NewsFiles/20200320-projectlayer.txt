@@ -1,0 +1,13 @@
+repository Generic
+service
+WEB
+moDELS
+DAL==>dBCONTEXT,GenericRepository,unit of work
+
+S  O  L  I  D
+
+Generic Repository
+unit of work
+
+
+BaseEntity

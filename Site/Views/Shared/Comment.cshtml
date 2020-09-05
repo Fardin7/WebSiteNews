@@ -1,0 +1,50 @@
+﻿@model Model.Comment
+
+@Html.Action("ListComment","Comment",new { newsid=Model.NewsId})
+    <div class="comment-form">
+        <h4>Leave a Reply</h4>
+
+
+        @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "commentForm", @class = "form-contact comment_form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        
+                        @Html.TextAreaFor(a=>a.Description,new { @class="form-control w-100",cols="30" ,rows="9",placeholder="نظرات شما..."})
+                        @Html.ValidationMessageFor(a=>a.Description)
+                        @*<textarea class="form-control w-100" name="Description" id="Description" cols="30" rows="9"
+                                  placeholder="Write Comment"></textarea>*@
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.TextBoxFor(a => a.Name, null, new { @class = "form-control", placeholder = "نام" })
+                        @Html.ValidationMessageFor(a => a.Name)
+                        @* <input class="form-control" name="Name" id="Name" type="text" placeholder="Name">*@
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+
+                        @Html.TextBoxFor(a => a.Email, null, new { @class = "form-control", type = "email", placeholder = "ایمیل" })
+                        @Html.ValidationMessageFor(a => a.Email)
+
+                    </div>
+                </div>
+                @Html.HiddenFor(a => a.NewsId)
+                
+                @*<div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                    </div>
+                </div>*@
+            </div>
+            <div class="form-group">
+                <button type="button" id="submitcommentform" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+            </div>
+            <p id="resultofsendcomment"></p>
+        }
+    </div>

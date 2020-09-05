@@ -1,0 +1,5 @@
+D:\Project_backup\New folder\WebSiteNews\Enum\bin\Release\Enum.dll
+D:\Project_backup\New folder\WebSiteNews\Enum\bin\Release\Enum.pdb
+D:\Project_backup\New folder\WebSiteNews\Enum\obj\Release\Enums.csprojAssemblyReference.cache
+D:\Project_backup\New folder\WebSiteNews\Enum\obj\Release\Enum.dll
+D:\Project_backup\New folder\WebSiteNews\Enum\obj\Release\Enum.pdb

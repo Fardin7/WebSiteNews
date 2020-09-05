@@ -1,0 +1,166 @@
+﻿@model List<NewsOfNewsCategory>
+@{
+    ViewBag.Title = "IndexNewsOfNewsCategory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<main>
+    <!-- Whats New Start -->
+    <section class="whats-news-area pt-50 pb-20">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="row d-flex justify-content-between">
+                        <div class="col-lg-3 col-md-3">
+                            <div class="section-tittle mb-30">
+                                <h3>اخرین دسته بندی</h3>
+                            </div>
+                        </div>
+                        <div class="col-lg-9 col-md-9">
+                            <div class="properties__button">
+                                <!--Nav Button  -->
+                                <nav>
+                                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                        @{ int j = 0; var activeshow = "active";}
+                                        @foreach (var item in Model)
+                                        {
+                                            var newstype = item.News[0].NewsType;
+                                            var newscategory = item.News[0].NewsSubCategory.NewsCategoryId;
+                                            if (j == 1)
+                                            {
+                                                activeshow = "";
+                                            }
+                                            <a class="nav-item nav-link @activeshow" id="" data-toggle="tab" href="#@newscategory" onclick="viewpaging(@newstype,@newscategory)" role="tab" aria-controls="nav-profile" aria-selected="false">@item.Title</a>
+                                            j++;
+                                        }
+                                        @*<a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">All</a>
+                                            <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Lifestyle</a>
+                                            <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Travel</a>
+                                            <a class="nav-item nav-link" id="nav-last-tab" data-toggle="tab" href="#nav-last" role="tab" aria-controls="nav-contact" aria-selected="false">Fashion</a>
+                                            <a class="nav-item nav-link" id="nav-Sports" data-toggle="tab" href="#nav-nav-Sport" role="tab" aria-controls="nav-contact" aria-selected="false">Sports</a>
+                                            <a class="nav-item nav-link" id="nav-technology" data-toggle="tab" href="#nav-techno" role="tab" aria-controls="nav-contact" aria-selected="false">Technology</a>*@
+                                    </div>
+                                </nav>
+                                <!--End Nav Button  -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <!-- Nav Card -->
+                            <div class="tab-content" id="nav-tabContent">
+                                @{ int i = 0; var active = "active";}
+                                @foreach (var item in Model)
+                                {
+                                    var newstype = "";
+                                    if (item.News[0].NewsType==1)
+                                    {
+                                        newstype = "اخبار";
+                                    }
+                                    else
+                                    {
+                                        newstype = "مقاله";
+                                    }
+                                    if (i == 1)
+                                    {
+                                        active = "";
+                                    }
+                                    <div class="tab-pane fade show @active" id="@item.News[0].NewsSubCategory.NewsCategoryId" role="tabpanel" aria-labelledby="nav-home-tab">
+                                        <div class="whats-news-caption">
+                                            <div class="row">
+                                                @foreach (var news in item.News)
+                                                {
+                                                    <div class="col-lg-6 col-md-6">
+                                                        <div class="single-what-news mb-100">
+                                                            <div class="what-img">
+                                                                <img style="height:370px;width:344.5px; " src="@news.ImageAddress" alt="@news.Title">
+                                                            </div>
+                                                            <div class="what-cap">
+                                                                <span class="color1">@news.Title</span>
+                                                                <h4>
+                                                                    @Html.RouteLink(news.Description, "news", new { type = newstype, cattegory = news.Subcategory.Title, newscattegory = news.NewsSubCategory.NewsCategory.Title, id = news.Title })
+
+
+
+                                                                </h4>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                }
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    i++;
+                                }
+                                <!-- card one -->
+
+                            </div>
+                            <!-- End Nav Card -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle mb-40">
+                        <h3>Follow Us</h3>
+                    </div>
+                    <!-- Flow Socail -->
+                    <div class="single-follow mb-45">
+                        <div class="single-box">
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="assets/img/news/icon-fb.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="assets/img/news/icon-tw.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="assets/img/news/icon-ins.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                            <div class="follow-us d-flex align-items-center">
+                                <div class="follow-social">
+                                    <a href="#"><img src="assets/img/news/icon-yo.png" alt=""></a>
+                                </div>
+                                <div class="follow-count">
+                                    <span>8,045</span>
+                                    <p>Fans</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- New Poster -->
+                    <div class="news-poster d-none d-lg-block">
+                        <img src="assets/img/news/news_card.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Whats New End -->
+    <!--Start pagination -->
+    @{Html.RenderPartial("_allnewspaging", new Paging() { pages = Math.Ceiling((double)Model[0].News.Count / 4), newstype = Model[0].News[0].NewsType, newscategory = Model[0].News[0].NewsSubCategory.NewsCategoryId.Value });}
+    <!-- End pagination  -->
+</main>
+
+@section scripts{
+
+    <script src="~/Scripts/CustomJs/DropDownList.js"></script>
+}

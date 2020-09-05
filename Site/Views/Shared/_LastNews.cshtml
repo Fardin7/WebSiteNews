@@ -1,0 +1,22 @@
+﻿@model List<Model.News>
+    <div class="weekly-news-active dot-style d-flex dot-style">
+
+        @foreach (var item in Model)
+        {
+            <div class="weekly-single">
+                <div class="weekly-img">
+                    <img src="@item.ImageAddress" />
+                </div>
+                <div class="weekly-caption">
+                    <span class="color1">@Html.Raw(item.Title)</span>
+                    <h4>
+                        @Html.RouteLink(item.Description, "news", new { type = "اخبار", cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
+                        
+
+                    </h4>
+                </div>
+            </div>
+        }
+        @*/News/Details?id=@item.Title && newstype=@((int)NewsType.News)*@
+
+    </div>

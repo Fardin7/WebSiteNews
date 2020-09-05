@@ -1,0 +1,10 @@
+C:\Users\Fardin\Desktop\Project_backup\New folder\WebSiteNews\Enum\bin\Debug\Enum.dll
+C:\Users\Fardin\Desktop\Project_backup\New folder\WebSiteNews\Enum\bin\Debug\Enum.pdb
+C:\Users\Fardin\Desktop\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enums.csprojAssemblyReference.cache
+C:\Users\Fardin\Desktop\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enum.dll
+C:\Users\Fardin\Desktop\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enum.pdb
+D:\Project_backup\New folder\WebSiteNews\Enum\bin\Debug\Enum.dll
+D:\Project_backup\New folder\WebSiteNews\Enum\bin\Debug\Enum.pdb
+D:\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enums.csprojAssemblyReference.cache
+D:\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enum.dll
+D:\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enum.pdb

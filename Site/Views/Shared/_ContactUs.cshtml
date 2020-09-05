@@ -1,0 +1,47 @@
+﻿@model Model.Contact
+
+
+<div class="col-12">
+    <h2 class="contact-title">تماس با ما</h2>
+</div>
+<div class="col-lg-8">
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "contactForm", @class = "form-contact comment_form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+            <div class="row">
+                <div class="col-12">
+                    <div class="form-group">
+                        @Html.TextAreaFor(a => a.Description, new { @class = "form-control w-100", cols = "30", rows = "9", placeholder = "ارتباط با ما...",onfocus="this.placeholder = ''", onblur="this.placeholder = 'ارتباط با ما...'" })
+                        @Html.ValidationMessageFor(a => a.Description)
+                       
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.TextBoxFor(a => a.Name, null, new { @class = "form-control valid", onfocus="this.placeholder = ''" ,onblur="this.placeholder = 'نام'" ,placeholder = "نام" })
+                        @Html.ValidationMessageFor(a => a.Name)
+                        
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="form-group">
+                        @Html.TextBoxFor(a => a.Email, null, new { @class = "form-control valid", type = "email", onfocus="this.placeholder = ''" ,onblur="this.placeholder = 'ایمیل'" ,placeholder = "ایمیل" })
+                        @Html.ValidationMessageFor(a => a.Email)
+                        
+                    </div>
+                </div>
+                @*<div class="col-12">
+                    <div class="form-group">
+                        <input class="form-control" name="subject" id="subject" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Subject'" placeholder="Enter Subject">
+                    </div>
+                </div>*@
+            </div>
+            <div class="form-group mt-3">
+                <button type="button" id="submitcontactus" class="button button-contactForm boxed-btn">ارسال</button>
+            </div>
+            <p id="resultofconactus"></p>
+    }
+    </div>
+

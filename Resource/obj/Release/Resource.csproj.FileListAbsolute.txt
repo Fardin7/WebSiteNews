@@ -1,0 +1,9 @@
+D:\Project_backup\New folder\WebSiteNews\Resource\bin\Release\Resource.dll
+D:\Project_backup\New folder\WebSiteNews\Resource\bin\Release\Resource.pdb
+D:\Project_backup\New folder\WebSiteNews\Resource\bin\Release\fa\Resource.resources.dll
+D:\Project_backup\New folder\WebSiteNews\Resource\obj\Release\Resource.Resource.resources
+D:\Project_backup\New folder\WebSiteNews\Resource\obj\Release\Resource.Resource.fa.resources
+D:\Project_backup\New folder\WebSiteNews\Resource\obj\Release\Resource.csproj.GenerateResource.cache
+D:\Project_backup\New folder\WebSiteNews\Resource\obj\Release\fa\Resource.resources.dll
+D:\Project_backup\New folder\WebSiteNews\Resource\obj\Release\Resource.dll
+D:\Project_backup\New folder\WebSiteNews\Resource\obj\Release\Resource.pdb

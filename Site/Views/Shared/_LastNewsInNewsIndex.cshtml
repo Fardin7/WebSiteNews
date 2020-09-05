@@ -1,0 +1,31 @@
+﻿@model List<Model.News>
+    <aside class="single_sidebar_widget popular_post_widget">
+        <h3 class="widget_title">Recent Post</h3>
+        @foreach (var item in Model)
+        {
+            var newstype = "اخبار";
+            if (item.NewsType==0)
+            {
+                newstype = "مقاله";
+            }
+            <div class="media post_item">
+                <img src="@item.ImageAddress" alt="@item.Title" style="width:80px;height:80px;">
+
+                @{ var alink = Url.RouteUrl("news", new
+                    {
+                        type = newstype,
+                        cattegory = item.Subcategory.Title,
+                        newscattegory = item.NewsSubCategory.NewsCategory.Title,
+                        id = item.Title
+                    });}
+                <div class="media-body">
+                    <a href="@alink">
+                        <h3>@Html.Raw(item.Title)</h3>
+                    </a>
+                    <p>January 12, @item.PublishDate.Value.Year</p>
+                </div>
+            </div>
+
+        }
+
+    </aside>
