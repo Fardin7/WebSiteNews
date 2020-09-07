@@ -53,7 +53,7 @@
                                 @foreach (var item in Model)
                                 {
                                     var newstype = "";
-                                    if (item.News[0].NewsType==1)
+                                    if (item.News[0].NewsType == 1)
                                     {
                                         newstype = "اخبار";
                                     }
@@ -163,4 +163,5 @@
 @section scripts{
 
     <script src="~/Scripts/CustomJs/DropDownList.js"></script>
+    <script src="~/Scripts/CustomJs/Paging.js"></script>
 }

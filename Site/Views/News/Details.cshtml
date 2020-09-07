@@ -8,6 +8,7 @@
 }
 @section scripts{
 
+    <script src="~/Scripts/CustomJs/Paging.js"></script>
     <script src="~/Scripts/CustomJs/DropDownList.js"></script>
     @Scripts.Render("~/bundles/jqueryval")
 }
@@ -98,7 +99,7 @@
                     </div>
                 </div>
 
-                @Html.Action("PartialCommet", "Comment",new { newsid=Model.Id})
+                @Html.Action("PartialCommet", "Comment", new { newsid = Model.Id })
 
             </div>
             <div class="col-lg-4">
@@ -121,7 +122,7 @@
                         </form>
                     </aside>
 
-                    @Html.Action("IndexPartial", "NewsCategory" , new { partialname = "_NewsCategoryList",newstype=Model.NewsType })
+                    @Html.Action("IndexPartial", "NewsCategory", new { partialname = "_NewsCategoryList", newstype = Model.NewsType })
 
 
                     @Html.Action("IndexPartial", "News", new { type = Model.NewsType, categoryname = Model.Subcategory.Category.Title, partialname = "_NewsOfCategory", count = 4 })
@@ -179,7 +180,7 @@
                             </li>
                         </ul>
                     </aside>
-                   @Html.Action("Create","NewsLetter",new { partialname="_SiderNewsLetter"})
+                    @Html.Action("Create", "NewsLetter", new { partialname = "_SiderNewsLetter" })
                 </div>
             </div>
         </div>
