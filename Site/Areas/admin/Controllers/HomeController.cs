@@ -8,12 +8,10 @@ using System.Web.Mvc;
 namespace   Site.Area.admin.Controllers
 {
     public class HomeController : BaseController
-    //: BaseController
+    
     {
         public ActionResult Index()
         {
-            //var b = 0;
-            //var k = 1 / b;
             return View();
         }
 
