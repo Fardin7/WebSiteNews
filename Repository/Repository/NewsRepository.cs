@@ -13,28 +13,20 @@ namespace Repository.Repository
 {
    public class NewsRepository : GenericRepository<News>, INewsRepository
     {
-        private DbContext _context;
-      // internal DbSet<Article> dbSet;
+
         public NewsRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
-            this._context = unitOfWork.DBContext;
-
-           
-
 
         }
 
         public News GetByTitleAndType(string title,int type)
         {
-            return _context.Set<News>().Where(q => q.Title == title && q.NewsType==type).FirstOrDefault();
+            return dbSet.Where(q => q.Title == title && q.NewsType==type).FirstOrDefault();
         }
-
-        public int GetCount()
+        public List<News> GetTrendingNews()
         {
-             
-               var b=  dbSet.Count();
-            return b;
-               
+            var trendcount = Get(a => a.IsTrend).Count();
+            return trendcount == 1 ? Get(a => a.IsTrend).ToList() : Get().ToList() ;
         }
 
         public List<News> ListNewsOfNewsCategoryAndCategory(int newstype, string categoryname, string newscategoryname,int count)

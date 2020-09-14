@@ -30,7 +30,6 @@ namespace Site.Area.admin.Controllers
         private readonly INewsCategoryService _newscategoryService;
         private readonly INewsSubCategoryService _newssubCategoryService;
         private readonly INewsFileService _newsFileService;
-        //  private Context db = new Context();
         public NewsController(Iservice<News> service, INewsService newsService, IUnitOfWork unitOfWork, ICategoryService categoryService,
           ISubCategoryService subCategoryService, INewsCategoryService newscategoryService, INewsSubCategoryService newsSubCategoryService
             , INewsFileService newsFileService)

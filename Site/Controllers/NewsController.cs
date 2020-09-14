@@ -197,7 +197,10 @@ namespace Site.Controllers
             return articls;
         }
 
-
+        public ActionResult TrendingNews(int count)
+        {
+            return  PartialView("_TrendNews", _service.Get(q => q.IsTrend == true).OrderByDescending(q => q.TrendingDate).Take(count).ToList());
+        }
 
     }
 }

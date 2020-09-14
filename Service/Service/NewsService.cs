@@ -26,9 +26,9 @@ namespace Service.Service
             return _newsRepository.GetByTitleAndType(title,type);
         }
 
-        public int GetCount()
+        public List<News> GetTrendingNews()
         {
-            return _newsRepository.GetCount();
+            return _newsRepository.GetTrendingNews();
         }
 
         public List<News> ListNewsOfNewsCategoryAndCategory(int newstype, string categoryname, string newscategoryname, int count)

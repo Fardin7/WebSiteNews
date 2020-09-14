@@ -29,14 +29,9 @@ namespace Site
             // it is NOT necessary to register your controllers
 
            /// container.RegisterType<CustomAuthorize>();
-            container.RegisterType<IUnitOfWork, UnitOfWork>(/*new HierarchicalLifetimeManager(),
-        new InjectionConstructor("DefaultConnectionString")*/);
+            container.RegisterType<IUnitOfWork, UnitOfWork>();
             container.RegisterType<UserManager<ApplicationUser>, ApplicationUserManager>();
             container.RegisterType<IUserStore<ApplicationUser>, UserStore<ApplicationUser>>(new HierarchicalLifetimeManager());
-            //container.RegisterType<IArticleService, ArticleService>();
-            //container.RegisterType<Iservice<Article>, GenericService<Article>>();
-            //container.RegisterType<IRepository<Article>, GenericRepository<Article>>();
-            //container.RegisterType<IArticleRepository, ArticleRepository>();
             container.RegisterType<INewsService, NewsService>();
             container.RegisterType<Iservice<News>, GenericService<News>>();
             container.RegisterType<IRepository<News>, GenericRepository<News>>();

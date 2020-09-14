@@ -29,6 +29,11 @@ namespace Model
 
         public bool IsActive { get; set; }
 
+        public bool IsTrend { get; set; }
+
+        public DateTime TrendingDate { get; set; }
+        public bool IsBanner { get; set; }
+
         [StringLength(500)]
         public string ImageAddress { get; set; }
         [Required]
@@ -40,7 +45,7 @@ namespace Model
         public virtual NewsSubCategory NewsSubCategory { get; set; }
         public virtual ICollection<NewsFile> NewsFiles { get; set; }
         public string ApplicationUserId { get; set; }
-        public virtual ApplicationUser ApplicationUser{ get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
 
         public virtual ICollection<Comment> Comments { get; set; }
     }
