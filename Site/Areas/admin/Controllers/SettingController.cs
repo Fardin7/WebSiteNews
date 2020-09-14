@@ -35,6 +35,12 @@ namespace Site.Area.admin.Controllers
 
         }
 
+        public ActionResult GetBannerNews()
+        {
+
+            return View("BannerNews", _service.Get().OrderByDescending(q => q.PublishDate));
+
+        }
         public string SetTrendingNews(int newsid)
         {
             var news = _service.GetByID(newsid);
@@ -57,10 +63,25 @@ namespace Site.Area.admin.Controllers
             return "خطای رخ داده است";
            
         }
-        public string SetNewsTrend(int Id)
+        public string SetTopNews(int newsid)
         {
+            var topnews = _service.Get(q => q.IsBanner);
+            if (topnews.Count()!=0)
+            {
+                var news = topnews.FirstOrDefault();
+                news.IsBanner = false;
+                _service.Update(news);
+                _unitOfWork.Complete();
+            }
+            var selectednews = _service.GetByID(newsid);
+            selectednews.IsBanner = true;
+            _service.Update(selectednews);
 
-            return "";
+            if (_unitOfWork.Complete()==1)
+            {
+                return "انجام شد";
+            }
+            return "خطای رخ داده است";
         }
 
     }

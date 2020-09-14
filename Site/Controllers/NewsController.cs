@@ -201,6 +201,9 @@ namespace Site.Controllers
         {
             return  PartialView("_TrendNews", _service.Get(q => q.IsTrend == true).OrderByDescending(q => q.TrendingDate).Take(count).ToList());
         }
-
+        public ActionResult BannerNews()
+        {
+            return PartialView("_BannerNews", _service.Get(q => q.IsBanner == true).FirstOrDefault());
+        }
     }
 }

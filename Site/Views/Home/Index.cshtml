@@ -17,20 +17,12 @@
             <div class="trending-main">
                 <!-- Trending Tittle -->
 
-                @Html.Action("TrendingNews", "News", new { count = 3 });
+                @Html.Action("TrendingNews", "News", new { count = 3 })
                
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- Trending Top -->
-                        <div class="trending-top mb-30">
-                            <div class="trend-top-img">
-                                <img src="WebSiteContent/assets/img/trending/trending_top.jpg" alt="">
-                                <div class="trend-top-cap">
-                                    <span>Appetizers</span>
-                                    <h2><a href="details.html">Welcome To The Best Model Winner<br> Contest At Look of the year</a></h2>
-                                </div>
-                            </div>
-                        </div>
+                       @Html.Action("BannerNews","News")
                         <!-- Trending Bottom -->
                         <div class="trending-bottom">
                             <div class="row">
