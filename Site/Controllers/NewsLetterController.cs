@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Site.Controllers
 {
-    public class NewsLetterController : Controller
+    public class NewsLetterController : BaseController
     {
         private readonly Iservice<NewsLetter> _service;
         private readonly INewsLetterService _NewsLetterService;

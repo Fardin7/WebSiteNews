@@ -2,31 +2,29 @@
 using Site.Helper;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Site.Area.admin.Controllers
+namespace Site.Controllers
 {
     public class BaseController : Controller
     {
         private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
+        //protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        //{
+           
+
+        //    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fa-IR");
+        //    base.OnActionExecuting(filterContext);
+
+        //}
         //protected override void ExecuteCore()
         //{
-        //    int culture = 0;
-        //    if (this.Session == null || this.Session["CurrentCulture"] == null)
-        //    {
-
-        //       // int.TryParse(System.Configuration.ConfigurationManager.AppSettings["Culture"], out culture);
-        //        this.Session["CurrentCulture"] = culture;
-        //    }
-        //    else
-        //    {
-        //        culture = (int)this.Session["CurrentCulture"];
-        //    }
-        //    // calling CultureHelper class properties for setting  
-        //    CultureHelper.CurrentCulture = culture;
+           
 
         //    base.ExecuteCore();
         //}

@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Site.Controllers
 {
-    public class CommentController : Controller
+    public class CommentController : BaseController
     {
         private readonly Iservice<Comment> _service;
         private readonly ICommentService _commentService;

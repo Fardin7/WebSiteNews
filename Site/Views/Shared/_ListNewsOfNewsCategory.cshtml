@@ -57,9 +57,10 @@
                                             <div class="what-cap">
                                                 <span class="color1">@news.Title</span>
                                                 <h4>
-                                                    @Html.RouteLink(news.Description, "news", new { type = "اخبار", cattegory = news.Subcategory.Title, newscattegory = news.NewsSubCategory.NewsCategory.Title, id = news.Title })
+                                                    @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.News[0].NewsType))}
+                                                    @Html.RouteLink(news.Description, "news", new { type = newstype, cattegory = news.Subcategory.Title, newscattegory = news.NewsSubCategory.NewsCategory.Title, id = news.Title })
 
-                                                   
+
 
                                                 </h4>
                                             </div>

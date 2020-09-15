@@ -10,8 +10,9 @@
                 <div class="weekly-caption">
                     <span class="color1">@Html.Raw(item.Title)</span>
                     <h4>
-                        @Html.RouteLink(item.Description, "news", new { type = "اخبار", cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
-                        
+                        @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.NewsType))}
+                        @Html.RouteLink(item.Description, "news", new { type = newstype, cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
+
 
                     </h4>
                 </div>

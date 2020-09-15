@@ -1,4 +1,5 @@
 using log4net;
+using Site.Helper;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -16,7 +17,7 @@ namespace Site
 
         protected void Application_Start()
         {
-           
+            CultureHelper.CultureInfo = new System.Globalization.CultureInfo("fa-IR");
             UnityConfig.RegisterComponents();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

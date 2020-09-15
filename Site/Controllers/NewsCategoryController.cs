@@ -1,6 +1,7 @@
 ﻿using Model;
 using Newtonsoft.Json;
 using Service.Interface;
+using Site.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Site.Controllers
 {
-    public class NewsCategoryController : Controller
+    public class NewsCategoryController : BaseController
     {
         private readonly Iservice<NewsCategory> _service;
         private readonly INewsService _newsService;
@@ -61,16 +62,8 @@ namespace Site.Controllers
 
         public ActionResult IndexNewsOfNewsCategory(int newscount, string type)
         {
-            if (type == "اخبار")
-            {
-                type = "News";
-            }
-            else
-            {
-                type = "Article";
-            }
-
-            var typeint = (int)Enum.Parse(typeof(NewsType), type);
+   
+            var typeint = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type));
             var query = _newscategoryService.LastNewsOfNewsCategory(typeint);
             var model = (from news in query
                          select new NewsOfNewsCategory
@@ -85,15 +78,7 @@ namespace Site.Controllers
         }
         public string PagingNewsOfNewsCategory(int newscount, int pagenumber, int type, int newscategory)
         {
-            string urltype = "";
-            if (type == 1)
-            {
-                urltype = "اخبار";
-            }
-            else
-            {
-                urltype = "مقاله";
-            }
+            var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), type));
 
             var newscategorytitle = _service.Get(q => q.Id == newscategory).FirstOrDefault().Title;
             var skipnews = newscount * (pagenumber - 1);

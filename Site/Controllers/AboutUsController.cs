@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Site.Controllers
 {
-    public class AboutUsController : Controller
+    public class AboutUsController : BaseController
     {
 
         public ActionResult Index()

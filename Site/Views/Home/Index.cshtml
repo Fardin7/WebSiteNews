@@ -1,4 +1,6 @@
 ﻿@model List<Model.News>
+@using Site.Helper;
+@using System.Threading;
 @{
 
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -18,11 +20,10 @@
                 <!-- Trending Tittle -->
 
                 @Html.Action("TrendingNews", "News", new { count = 3 })
-               
                 <div class="row">
                     <div class="col-lg-8">
                         <!-- Trending Top -->
-                       @Html.Action("BannerNews","News")
+                        @Html.Action("BannerNews", "News")
                         <!-- Trending Bottom -->
                         <div class="trending-bottom">
                             <div class="row">
@@ -44,7 +45,7 @@
                                         </div>
                                         <div class="trend-bottom-cap">
                                             <span class="color2">Sports</span>
-                                            <h4><h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4></h4>
+                                            <h4><a href="details.html">Get the Illusion of Fuller Lashes by “Mascng.”</a></h4>
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +165,7 @@
     <!-- End Weekly-News -->
     <!-- Start Youtube -->
     <div class="youtube-area video-padding">
-        <div class="container">
+        @*<div class="container">
             <div class="row">
                 <div class="col-12">
                     <div class="video-items-active">
@@ -237,7 +238,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div>*@
     </div>
     <!-- End Start youtube -->
     <!--  Recent Articles start -->

@@ -1,4 +1,5 @@
 ﻿@model Model.News
+ @using Site.Helper
 <div class="trending-top mb-30">
     <div class="trend-top-img">
         <img style="width:770px;height:410.656px" src="@Model.ImageAddress" alt="">
@@ -6,7 +7,8 @@
             <span>@Model.Title</span>
 
             <h2>
-                @Html.RouteLink(Model.Description, "news", new { type = "مقاله", cattegory = Model.Subcategory.Title, newscattegory = Model.NewsSubCategory.NewsCategory.Title, id = Model.Title })
+                @Html.RouteLink(Model.Description, "news", new { type = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), 1))
+, cattegory = Model.Subcategory.Title, newscattegory = Model.NewsSubCategory.NewsCategory.Title, id = Model.Title })
               
             </h2>
         </div>

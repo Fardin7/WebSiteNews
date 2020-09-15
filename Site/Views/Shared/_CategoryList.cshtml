@@ -11,24 +11,21 @@
         <div class="weekly2-news-active dot-style d-flex dot-style">
             @foreach (var item in Model)
             {
+                var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), 1));
+                var alink = Url.RouteUrl("newsofcategory", new { type = newstype, categoryname = item.Title });
 
-                var alink = Url.RouteUrl("newsofcategory", new { type = "اخبار", categoryname = item.Title});
-
-
-
-
-            <a href="@alink">
-                <div class="weekly2-single">
-                    <div class="weekly2-img">
-                        <img src="@item.ImageAddress" alt="">
+                <a href="@alink">
+                    <div class="weekly2-single">
+                        <div class="weekly2-img">
+                            <img src="@item.ImageAddress" alt="">
+                        </div>
+                        <div class="weekly2-caption">
+                            <span class="color1">@item.Title</span>
+                            @*<p>25 Jan 2020</p>
+                                <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>*@
+                        </div>
                     </div>
-                    <div class="weekly2-caption">
-                        <span class="color1">@item.Title</span>
-                        @*<p>25 Jan 2020</p>
-                    <h4><a href="#">Welcome To The Best Model  Winner Contest</a></h4>*@
-                    </div>
-                </div>
-            </a>
+                </a>
 
             }
 

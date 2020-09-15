@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace Site.Controllers
 {
-    public class ContactController : Controller
+    public class ContactController : BaseController
     {
         private readonly Iservice<Contact> _service;
         private readonly IContactService _contactService;

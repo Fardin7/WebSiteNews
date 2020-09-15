@@ -9,7 +9,7 @@ namespace Model
     public partial class News
     {
         public int Id { get; set; }
-
+        [Display(Name = "Title", ResourceType = typeof(Resource.Resource))]
         [Required]
         [StringLength(200)]
         public string Title { get; set; }

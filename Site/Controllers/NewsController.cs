@@ -4,13 +4,15 @@ using Newtonsoft.Json;
 using Service.Interface;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-
+using Site.Helper;
 namespace Site.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : BaseController
     {
 
         private readonly Iservice<News> _service;
@@ -54,16 +56,8 @@ namespace Site.Controllers
             }
           
 
-            var newstype = -1;
-            if (type == "اخبار")
-            {
-                newstype = 1;
-                    //(int)Enum.Parse(typeof(NewsType), type);
-            }
-            else
-            {
-                newstype = 0;
-            }
+            var newstype = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type));
+
             var model = _newsService.ListNewsOfNewsCategoryAndCategory(newstype, categoryname, newscategoryname, 4);
             double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname).Where(q => q.NewsType == newstype).Count();
             pagecount = Math.Ceiling(pagecount / 4);
@@ -104,17 +98,7 @@ namespace Site.Controllers
         }
 
         public string NewsOfNewsCategoryAndCategoryPaging(int type, int categoryname, int newscategoryname, int count, int pagenumber)
-        {
-            string urltype = "";
-            if (type == 1)
-            {
-                urltype = "اخبار";
-            }
-            else
-            {
-                urltype = "مقاله";
-            }
-            // var allnews = _service.Get(q => q.NewsSubCategory.NewsCategoryId == newscategoryname && q.SubcategoryId == categoryname && q.NewsType == type).ToList();
+        {         
             var model = _newsService.RelatedNewsPagin(type, categoryname, newscategoryname, count, pagenumber);
             var news = new List<NewsIndexPaging>();
             foreach (var item in model)
@@ -142,16 +126,7 @@ namespace Site.Controllers
         // GET: user/News/Details/5
         public ActionResult Details(string id, string type)
         {
-            if (type == "اخبار")
-            {
-                type = "News";
-            }
-            else
-            {
-                type = "Article";
-            }
-
-            var typeint = (int)Enum.Parse(typeof(NewsType), type);
+            var typeint = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type));
             return View(_newsService.GetByTitleAndType(id, typeint));
 
         }
@@ -172,28 +147,23 @@ namespace Site.Controllers
 
         public string NewsPaging(int newscount, int pagenumber, int newstype)
         {
+            var newstypename = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), newstype));
+
             var model = _service.Get(q => q.NewsType == newstype).OrderByDescending(q => q.PublishDate).Take(newscount * pagenumber).Skip(newscount * (pagenumber - 1)).ToList();
             var list = new List<LastNews>();
             foreach (var item in model)
             {
+
                 list.Add(new Site.LastNews()
                 {
                     Title = item.Title,
                     ImageAddress = item.ImageAddress,
-                    Url = Url.RouteUrl("news", new { type = "مقاله", cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
+                    Url = Url.RouteUrl("news", new { type = newstypename, cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
 
 
                 });
             }
             string articls = JsonConvert.SerializeObject(list);
-
-
-            //    model, Formatting.Indented, new JsonSerializerSettings
-            //{
-            //    PreserveReferencesHandling = PreserveReferencesHandling.All
-            //});
-
-
             return articls;
         }
 

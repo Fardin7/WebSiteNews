@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace Site.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         private readonly Iservice<News> _service;
         private readonly INewsService _newsService;

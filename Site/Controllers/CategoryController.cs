@@ -8,7 +8,7 @@ using System.Web.Mvc;
 
 namespace Site.Controllers
 {
-    public class CategoryController : Controller
+    public class CategoryController : BaseController
     {
         private readonly Iservice<Category> _service;
         private readonly ICategoryService _categoryService;

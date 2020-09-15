@@ -1,14 +1,7 @@
 ﻿@model List<Model.News>
 @{
-    var urltype = "";
-    if (Model[0].NewsType == 1)
-    {
-        urltype = "اخبار";
-    }
-    else
-    {
-        urltype = "مقاله";
-    }
+    
+     var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType));
 }
 @if (Model.Count >= 2)
 {

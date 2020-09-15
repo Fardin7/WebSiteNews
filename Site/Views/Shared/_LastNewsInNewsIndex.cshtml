@@ -3,11 +3,7 @@
         <h3 class="widget_title">Recent Post</h3>
         @foreach (var item in Model)
         {
-            var newstype = "اخبار";
-            if (item.NewsType==0)
-            {
-                newstype = "مقاله";
-            }
+            @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.NewsType))}
             <div class="media post_item">
                 <img src="@item.ImageAddress" alt="@item.Title" style="width:80px;height:80px;">
 

@@ -20,7 +20,7 @@ using System.Web.UI;
 
 namespace Site.Area.admin.Controllers
 {
-    public class NewsController : Controller
+    public class NewsController : BaseController
     {
         private readonly Iservice<News> _service;
         private readonly INewsService _newsService;
