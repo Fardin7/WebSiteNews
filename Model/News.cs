@@ -31,7 +31,7 @@ namespace Model
 
         public bool IsTrend { get; set; }
 
-        public DateTime TrendingDate { get; set; }
+        public DateTime? TrendingDate { get; set; }
         public bool IsBanner { get; set; }
 
         [StringLength(500)]

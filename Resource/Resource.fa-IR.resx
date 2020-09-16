@@ -180,6 +180,9 @@
   <data name="Related to" xml:space="preserve">
     <value>مربوط به</value>
   </data>
+  <data name="Report" xml:space="preserve">
+    <value>گزارش</value>
+  </data>
   <data name="Required" xml:space="preserve">
     <value>لطفا این مورد را پر کنید</value>
   </data>

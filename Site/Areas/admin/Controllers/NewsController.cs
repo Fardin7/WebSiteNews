@@ -216,7 +216,7 @@ namespace Site.Area.admin.Controllers
                     var address = TempData["NewsAddressImage"].ToString();
                     HttpPostedFileBase file = (HttpPostedFileBase)TempData["NewsImageFile"];
                     news.ImageAddress = address;
-                    file.SaveAs(address);
+                    file.SaveAs(Server.MapPath(address));
                     TempData["NewsAddressImage"] = null;
                     TempData["NewsFile"] = null;
                    

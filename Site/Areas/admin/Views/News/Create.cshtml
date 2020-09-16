@@ -1,5 +1,5 @@
 ﻿@model Model.News
-
+@using System.Threading;
 <section class="content" style=" direction: rtl;text-align: initial;">
     <div class="row">
         <div class="col-md-12">
@@ -37,14 +37,17 @@
                                 <div class="col-md-10">
 
                                     <fieldset id="group1">
-                                        <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" value="0" id="customRadio1" name="NewsType">
-                                            <label for="customRadio1" class="custom-control-label">مقاله</label>
-                                        </div>
-                                        <div class="custom-control custom-radio">
-                                            <input class="custom-control-input" type="radio" value="1" id="customRadio2" name="NewsType" checked>
-                                            <label for="customRadio2" class="custom-control-label">خبر</label>
-                                        </div>
+                                        @{ int counter = 1;}
+                                        @foreach (var item in Enum.GetNames(typeof(NewsType)))
+                                        {
+                                            var enumvalue = (int)Enum.Parse(typeof(NewsType), item);
+                                            var intputid = "customRadio" + counter;
+                                            <div class="custom-control custom-radio">
+                                                <input class="custom-control-input" type="radio" value="@enumvalue" id="@intputid" name="NewsType">
+                                                <label for="@intputid" class="custom-control-label">@Resource.Resource.ResourceManager.GetString(item,Thread.CurrentThread.CurrentUICulture)</label>
+                                            </div>
+                                            counter++;
+                                        }
                                     </fieldset>
                                 </div>
                             </div>
