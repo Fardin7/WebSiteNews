@@ -28,17 +28,17 @@
                         </h2>
                         <ul class="blog-info-link mt-3 mb-4">
                             <li><a href="#"><i class="fa fa-user"></i> @Model.Subcategory.Title, @Model.NewsSubCategory.NewsCategory.Title</a></li>
-                            <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
+                            <li><a href="#"><i class="fa fa-comments"></i> @*@Model.ApplicationUser.UserName*@</a></li>
                         </ul>
                         @Html.Raw(Model.Body)                    
                     </div>
                 </div>
                 <div class="navigation-top">
                     <div class="d-sm-flex justify-content-between text-center">
-                        <p class="like-info">
+                        @*<p class="like-info">
                             <span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
                             people like this
-                        </p>
+                        </p>*@
                         <div class="col-sm-4 text-center my-2 my-sm-0">
                             <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
                         </div>
@@ -54,7 +54,7 @@
 
 
                 </div>
-                <div class="blog-author">
+                @*<div class="blog-author">
                     <div class="media align-items-center">
                         <img src="assets/img/blog/author.png" alt="">
                         <div class="media-body">
@@ -67,7 +67,7 @@
                             </p>
                         </div>
                     </div>
-                </div>
+                </div>*@
 
                 @Html.Action("PartialCommet", "Comment", new { newsid = Model.Id })
 
@@ -78,8 +78,8 @@
                         <form action="#">
                             <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <input type="text" class="form-control" placeholder='Search Keyword'
-                                           onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
+                                    <input type="text" class="form-control" placeholder='@Resource.Resource.Search_Keyword'
+                                           onfocus="this.placeholder = ''" onblur="this.placeholder = '@Resource.Resource.Search_Keyword'">
                                     <div class="input-group-append">
                                         <button class="btns" type="button"><i class="ti-search"></i></button>
                                     </div>
@@ -87,7 +87,7 @@
                             </div>
                             <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                                     type="submit">
-                                Search
+                                @Resource.Resource.Search
                             </button>
                         </form>
                     </aside>
@@ -100,7 +100,7 @@
                     @if (Model.KeyWord != null)
                     {
                         <aside class="single_sidebar_widget tag_cloud_widget">
-                            <h4 class="widget_title">Tag Clouds</h4>
+                            <h4 class="widget_title">@Resource.Resource.Tag_Clouds</h4>
 
                             <ul class="list">
                                 @for (int i = 0; i < Model.KeyWord.Split(new char[] { ',' }).Length; i++)
@@ -115,8 +115,8 @@
                         </aside>
                     }
 
-                    <aside class="single_sidebar_widget instagram_feeds">
-                        <h4 class="widget_title">Instagram Feeds</h4>
+                    @*<aside class="single_sidebar_widget instagram_feeds">
+                        <h4 class="widget_title">@Resource.Resource.twitter_Feeds</h4>
                         <ul class="instagram_row flex-wrap">
                             <li>
                                 <a href="#">
@@ -149,7 +149,7 @@
                                 </a>
                             </li>
                         </ul>
-                    </aside>
+                    </aside>*@
                     @Html.Action("Create", "NewsLetter", new { partialname = "_SiderNewsLetter" })
                 </div>
             </div>

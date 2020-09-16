@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Model.NewsCategory>
 @{
-    @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), ViewBag.newstype == 0))}
+    var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), ViewBag.newstype), Thread.CurrentThread.CurrentUICulture);
         }
 <aside class="single_sidebar_widget post_category_widget">
-    <h4 class="widget_title">دسته بندی</h4>
+    <h4 class="widget_title">@Resource.Resource.Category</h4>
     <ul class="list cat-list">
         @foreach (var item in Model)
         {

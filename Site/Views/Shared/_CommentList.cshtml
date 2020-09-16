@@ -1,6 +1,6 @@
 ﻿@model List<Model.Comment>
     <div class="comments-area">
-        <h4> عدد پیام @Model.Count   </h4>
+        <h4> @Resource.Resource.Number @Resource.Resource.Message @Model.Count   </h4>
         @foreach (var item in Model)
         {
             <div class="comment-list">

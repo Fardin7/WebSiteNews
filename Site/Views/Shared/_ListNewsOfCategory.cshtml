@@ -9,7 +9,8 @@
             <div class="trand-right-cap">
                 <span class="color1">@item.Title</span>
                 <h4>
-                    @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.News[0].NewsType))}
+                    @{ var newstype = Resource.Resource.News;
+                           }
 
                     @Html.RouteLink(item.News.FirstOrDefault().Title, "news", new { type = newstype, id = item.News.SingleOrDefault().Title, newscattegory = item.News.SingleOrDefault().NewsSubCategory.NewsCategory.Title, cattegory = item.Title })
 

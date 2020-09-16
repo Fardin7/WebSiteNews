@@ -5,6 +5,7 @@ using Site.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -63,7 +64,7 @@ namespace Site.Controllers
         public ActionResult IndexNewsOfNewsCategory(int newscount, string type)
         {
    
-            var typeint = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type));
+            var typeint = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
             var query = _newscategoryService.LastNewsOfNewsCategory(typeint);
             var model = (from news in query
                          select new NewsOfNewsCategory
@@ -78,7 +79,7 @@ namespace Site.Controllers
         }
         public string PagingNewsOfNewsCategory(int newscount, int pagenumber, int type, int newscategory)
         {
-            var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), type));
+            var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), type), Thread.CurrentThread.CurrentUICulture);
 
             var newscategorytitle = _service.Get(q => q.Id == newscategory).FirstOrDefault().Title;
             var skipnews = newscount * (pagenumber - 1);

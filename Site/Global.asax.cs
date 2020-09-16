@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Optimization;
@@ -15,9 +16,13 @@ namespace Site
     {
         private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
+        private void Application_BeginRequest(Object source, EventArgs e)
+        {
+            Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fa-IR");
+        }
         protected void Application_Start()
         {
-            CultureHelper.CultureInfo = new System.Globalization.CultureInfo("fa-IR");
+
             UnityConfig.RegisterComponents();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
@@ -63,7 +68,7 @@ namespace Site
             var message = ex.Message;
 
             Logger.Error(string.Format("External Error...{0}", message), ex);
-           // Server.ClearError();
+            // Server.ClearError();
             //if (statuscode == 404)
             //{
             //    Response.Redirect("/Home/NotFound");

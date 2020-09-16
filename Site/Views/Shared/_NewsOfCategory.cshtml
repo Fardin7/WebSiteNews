@@ -5,16 +5,16 @@
             if (Model.Count > 0)
             {
 
-                 newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType));
+                 newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType),Thread.CurrentThread.CurrentUICulture);
             }
         }
         @if (Model.Count > 0)
         {
-            <h3 class="widget_title">@newstype مربوط به @Model[0].Subcategory.Category.Title</h3>
+            <h3 class="widget_title">@newstype @Resource.Resource.Related_to @Model[0].Subcategory.Category.Title</h3>
             foreach (var item in Model)
             {
                 <div class="media post_item">
-                    <img src="assets/img/post/post_1.png" alt="post">
+                    <img src="@item.ImageAddress" style="width:80PX;height:80PX;" alt="@item.Title">                  
                     <div class="media-body">
                         <a href="">
                             @Html.RouteLink(item.Title, "news", new { type = newstype, cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title }, new { style = "color:black" })

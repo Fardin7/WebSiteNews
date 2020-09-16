@@ -56,7 +56,7 @@ namespace Site.Controllers
             }
           
 
-            var newstype = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type));
+            var newstype = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
 
             var model = _newsService.ListNewsOfNewsCategoryAndCategory(newstype, categoryname, newscategoryname, 4);
             double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname).Where(q => q.NewsType == newstype).Count();
@@ -126,7 +126,7 @@ namespace Site.Controllers
         // GET: user/News/Details/5
         public ActionResult Details(string id, string type)
         {
-            var typeint = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type));
+            var typeint = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
             return View(_newsService.GetByTitleAndType(id, typeint));
 
         }
@@ -147,7 +147,7 @@ namespace Site.Controllers
 
         public string NewsPaging(int newscount, int pagenumber, int newstype)
         {
-            var newstypename = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), newstype));
+            var newstypename = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), newstype), Thread.CurrentThread.CurrentUICulture);
 
             var model = _service.Get(q => q.NewsType == newstype).OrderByDescending(q => q.PublishDate).Take(newscount * pagenumber).Skip(newscount * (pagenumber - 1)).ToList();
             var list = new List<LastNews>();

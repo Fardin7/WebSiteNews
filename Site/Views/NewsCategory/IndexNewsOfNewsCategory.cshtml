@@ -13,7 +13,7 @@
                     <div class="row d-flex justify-content-between">
                         <div class="col-lg-3 col-md-3">
                             <div class="section-tittle mb-30">
-                                <h3>اخرین دسته بندی</h3>
+                                <h3>@Resource.Resource.Last_NewsCategory </h3>
                             </div>
                         </div>
                         <div class="col-lg-9 col-md-9">
@@ -47,7 +47,7 @@
                                 @{ int i = 0; var active = "active";}
                                 @foreach (var item in Model)
                                 {
-                                  var newstype=  CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.News[0].NewsType));
+                                  var newstype=  CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.News[0].NewsType),Thread.CurrentThread.CurrentUICulture);
                                     if (i == 1)
                                     {
                                         active = "";
@@ -87,7 +87,7 @@
                 <div class="col-lg-4">
                     <!-- Section Tittle -->
                     <div class="section-tittle mb-40">
-                        <h3>Follow Us</h3>
+                        <h3>@Resource.Resource.Follow_Us</h3>
                     </div>
                     <!-- Flow Socail -->
                     <div class="single-follow mb-45">

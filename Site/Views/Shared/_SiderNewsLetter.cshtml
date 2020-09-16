@@ -1,6 +1,6 @@
 ﻿@model Model.NewsLetter
 <aside class="single_sidebar_widget newsletter_widget">
-    <h4 class="widget_title">خبرنامه</h4>
+    <h4 class="widget_title">@Resource.Resource.NewsLetter</h4>
 
     @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "newsletterForm" }))
     {
@@ -14,7 +14,7 @@
         </div>
         <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
                 type="button" id="registernewsletter">
-            ثبت خبرنامه
+            @Resource.Resource.Send
         </button>
         <p id="newsletterregisterresult">  
 

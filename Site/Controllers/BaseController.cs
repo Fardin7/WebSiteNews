@@ -14,9 +14,15 @@ namespace Site.Controllers
     {
         private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
 
+        protected override void OnActionExecuting(ActionExecutingContext filterContext)
+        {
+            
+            base.OnActionExecuting(filterContext);
+        }
+
         //protected override void OnActionExecuting(ActionExecutingContext filterContext)
         //{
-           
+
 
         //    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fa-IR");
         //    base.OnActionExecuting(filterContext);
@@ -24,7 +30,7 @@ namespace Site.Controllers
         //}
         //protected override void ExecuteCore()
         //{
-           
+
 
         //    base.ExecuteCore();
         //}

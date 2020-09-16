@@ -1,13 +1,12 @@
 ﻿@model List<Model.News>
 @{
-    
-     var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType));
+
+    var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType), Thread.CurrentThread.CurrentUICulture);
 }
 @if (Model.Count >= 2)
 {
     <div class="navigation-area" id="relatednews">
         <div class="row">
-            @*onclick="pagingrelatednews('@Model[0].NewsType', '@Model[0].Subcategory.Id', '@Model[0].NewsSubCategory.NewsCategory.Id', 2, 1,@ViewBag.pagecount)"*@
             <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                 <div class="thumb">
                     <a>
@@ -20,7 +19,7 @@
                     </a>
                 </div>
                 <div class="detials">
-                    <p>قبل</p>
+                    <p>@Resource.Resource.previous</p>
 
                     <a href="@Url.RouteUrl("news", new { type =urltype , cattegory = Model[0].Subcategory.Title, newscattegory = Model[0].NewsSubCategory.NewsCategory.Title, id = Model[0].Title })">
                         <h4>@Model[0].Title</h4>
@@ -29,7 +28,7 @@
             </div>
             <div style="cursor:pointer;" class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                 <div class="detials">
-                    <p>بعد</p>
+                    <p>@Resource.Resource.Next</p>
                     <a href="@Url.RouteUrl("news", new { type =urltype , cattegory = Model[1].Subcategory.Title, newscattegory = Model[1].NewsSubCategory.NewsCategory.Title, id = Model[1].Title })">
 
                         <h4>@Model[1].Title</h4>

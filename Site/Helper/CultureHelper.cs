@@ -10,12 +10,12 @@ namespace Site.Helper
 {
     public class CultureHelper
     {
-        public static CultureInfo CultureInfo;
+   
 
-        public static string EnumLocalizeValueToName(string value)
+        public static string EnumLocalizeValueToName(string value,CultureInfo cultureInfo )
         {
           
-            var enumerator = Resource.Resource.ResourceManager.GetResourceSet(CultureInfo, false, false).GetEnumerator();
+            var enumerator = Resource.Resource.ResourceManager.GetResourceSet(cultureInfo, false, false).GetEnumerator();
             while (enumerator.MoveNext())
             {
                 if (enumerator.Value.ToString() == value)
@@ -27,9 +27,9 @@ namespace Site.Helper
             return value;
 
         }
-        public static string EnumLocalize(string name)
+        public static string EnumLocalize(string name,CultureInfo cultureInfo)
         {
-            return Resource.Resource.ResourceManager.GetString(name, CultureInfo);
+            return Resource.Resource.ResourceManager.GetString(name, cultureInfo);
 
         }
 

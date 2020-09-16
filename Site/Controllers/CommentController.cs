@@ -5,6 +5,7 @@ using Service.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Web;
 using System.Web.Mvc;
 
@@ -30,7 +31,7 @@ namespace Site.Controllers
             return View();
         }
          public ActionResult PartialCommet(int newsid)
-        {
+        {      
             ViewBag.newsid = newsid;
             return PartialView("Comment",new Comment() { NewsId=newsid});
         }

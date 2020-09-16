@@ -1,9 +1,9 @@
 ﻿@model List<Model.News>
     <aside class="single_sidebar_widget popular_post_widget">
-        <h3 class="widget_title">Recent Post</h3>
+        <h3 class="widget_title">@Resource.Resource.Recent_Post</h3>
         @foreach (var item in Model)
         {
-            @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.NewsType))}
+            @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.NewsType),Thread.CurrentThread.CurrentUICulture)}
             <div class="media post_item">
                 <img src="@item.ImageAddress" alt="@item.Title" style="width:80px;height:80px;">
 

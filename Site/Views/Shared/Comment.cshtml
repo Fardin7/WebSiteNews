@@ -2,7 +2,7 @@
 
 @Html.Action("ListComment","Comment",new { newsid=Model.NewsId})
     <div class="comment-form">
-        <h4>Leave a Reply</h4>
+        <h4>@Resource.Resource.Leave_a_Reply</h4>
 
 
         @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "commentForm", @class = "form-contact comment_form" }))
@@ -12,8 +12,8 @@
             <div class="row">
                 <div class="col-12">
                     <div class="form-group">
-                        
-                        @Html.TextAreaFor(a=>a.Description,new { @class="form-control w-100",cols="30" ,rows="9",placeholder="نظرات شما..."})
+                     
+                        @Html.TextAreaFor(a=>a.Description,new { @class="form-control w-100",cols="30" ,rows="9",placeholder=Resource.Resource.Your_Description})
                         @Html.ValidationMessageFor(a=>a.Description)
                         @*<textarea class="form-control w-100" name="Description" id="Description" cols="30" rows="9"
                                   placeholder="Write Comment"></textarea>*@
@@ -21,7 +21,7 @@
                 </div>
                 <div class="col-sm-6">
                     <div class="form-group">
-                        @Html.TextBoxFor(a => a.Name, null, new { @class = "form-control", placeholder = "نام" })
+                        @Html.TextBoxFor(a => a.Name, null, new { @class = "form-control", placeholder = Resource.Resource.Name})
                         @Html.ValidationMessageFor(a => a.Name)
                         @* <input class="form-control" name="Name" id="Name" type="text" placeholder="Name">*@
                     </div>
@@ -29,7 +29,7 @@
                 <div class="col-sm-6">
                     <div class="form-group">
 
-                        @Html.TextBoxFor(a => a.Email, null, new { @class = "form-control", type = "email", placeholder = "ایمیل" })
+                        @Html.TextBoxFor(a => a.Email, null, new { @class = "form-control", type = "email", placeholder = Resource.Resource.Email })
                         @Html.ValidationMessageFor(a => a.Email)
 
                     </div>
@@ -43,7 +43,7 @@
                 </div>*@
             </div>
             <div class="form-group">
-                <button type="button" id="submitcommentform" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
+                <button type="button" id="submitcommentform" class="button button-contactForm btn_1 boxed-btn">@Resource.Resource.Send</button>
             </div>
             <p id="resultofsendcomment"></p>
         }

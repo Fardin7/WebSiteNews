@@ -7,7 +7,7 @@
             <span>@Model.Title</span>
 
             <h2>
-                @Html.RouteLink(Model.Description, "news", new { type = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), 1))
+                @Html.RouteLink(Model.Description, "news", new { type = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), 1),Thread.CurrentThread.CurrentUICulture)
 , cattegory = Model.Subcategory.Title, newscattegory = Model.NewsSubCategory.NewsCategory.Title, id = Model.Title })
               
             </h2>
