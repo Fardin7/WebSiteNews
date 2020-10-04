@@ -132,6 +132,9 @@
   <data name="Description" xml:space="preserve">
     <value>توضیحات</value>
   </data>
+  <data name="DescriptionLength" xml:space="preserve">
+    <value>حداقل تعداد کاراکتر 70 عدد است!</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>ایمیل</value>
   </data>

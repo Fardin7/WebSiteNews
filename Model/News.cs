@@ -10,14 +10,17 @@ namespace Model
     {
         public int Id { get; set; }
         [Display(Name = "Title", ResourceType = typeof(Resource.Resource))]
-        [Required]
-        [StringLength(200)]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resource.Resource))]
+        [StringLength(150, ErrorMessageResourceName = "DescriptionLength", ErrorMessageResourceType = typeof(Resource.Resource))]
         public string Title { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resource.Resource))]
+
+        [MinLength(70,ErrorMessageResourceName  ="DescriptionLength",ErrorMessageResourceType = typeof(Resource.Resource))]
         public string Description { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resource.Resource))]
+
         public string Body { get; set; }
         [Required]
         public int NewsType { get; set; }

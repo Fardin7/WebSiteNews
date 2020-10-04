@@ -95,7 +95,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/VerifyCode
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
             // Require that the user has already logged in via username/password or external login
@@ -109,7 +109,7 @@ namespace Site.Area.admin.Controllers
         //
         // POST: /Account/VerifyCode
         [HttpPost]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> VerifyCode(VerifyCodeViewModel model)
         {
@@ -138,7 +138,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/Register
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public ActionResult Register()
         {
             return View();
@@ -147,7 +147,7 @@ namespace Site.Area.admin.Controllers
         //
         // POST: /Account/Register
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Register(RegisterViewModel model)
         {
@@ -176,7 +176,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/ConfirmEmail
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public async Task<ActionResult> ConfirmEmail(string userId, string code)
         {
             if (userId == null || code == null)
@@ -189,7 +189,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/ForgotPassword
-        [AllowAnonymous]
+      //  [AllowAnonymous]
         public ActionResult ForgotPassword()
         {
             return View();
@@ -198,7 +198,7 @@ namespace Site.Area.admin.Controllers
         //
         // POST: /Account/ForgotPassword
         [HttpPost]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
         {
@@ -225,7 +225,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/ForgotPasswordConfirmation
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult ForgotPasswordConfirmation()
         {
             return View();
@@ -233,7 +233,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/ResetPassword
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult ResetPassword(string code)
         {
             return code == null ? View("Error") : View();
@@ -242,7 +242,7 @@ namespace Site.Area.admin.Controllers
         //
         // POST: /Account/ResetPassword
         [HttpPost]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ResetPassword(ResetPasswordViewModel model)
         {
@@ -267,7 +267,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/ResetPasswordConfirmation
-        [AllowAnonymous]
+      //  [AllowAnonymous]
         public ActionResult ResetPasswordConfirmation()
         {
             return View();
@@ -276,7 +276,7 @@ namespace Site.Area.admin.Controllers
         //
         // POST: /Account/ExternalLogin
         [HttpPost]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult ExternalLogin(string provider, string returnUrl)
         {
@@ -286,7 +286,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/SendCode
-        [AllowAnonymous]
+   //     [AllowAnonymous]
         public async Task<ActionResult> SendCode(string returnUrl, bool rememberMe)
         {
             var userId = await SignInManager.GetVerifiedUserIdAsync();
@@ -302,7 +302,7 @@ namespace Site.Area.admin.Controllers
         //
         // POST: /Account/SendCode
         [HttpPost]
-        [AllowAnonymous]
+       // [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> SendCode(SendCodeViewModel model)
         {
@@ -321,7 +321,7 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/ExternalLoginCallback
-        [AllowAnonymous]
+     //   [AllowAnonymous]
         public async Task<ActionResult> ExternalLoginCallback(string returnUrl)
         {
             var loginInfo = await AuthenticationManager.GetExternalLoginInfoAsync();
@@ -352,7 +352,7 @@ namespace Site.Area.admin.Controllers
         //
         // POST: /Account/ExternalLoginConfirmation
         [HttpPost]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> ExternalLoginConfirmation(ExternalLoginConfirmationViewModel model, string returnUrl)
         {
@@ -391,6 +391,7 @@ namespace Site.Area.admin.Controllers
         // POST: /Account/LogOff
         //[HttpPost]
         //[ValidateAntiForgeryToken]
+        [AllowAnonymous]
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
@@ -399,13 +400,13 @@ namespace Site.Area.admin.Controllers
 
         //
         // GET: /Account/ExternalLoginFailure
-        [AllowAnonymous]
+       // [AllowAnonymous]
         public ActionResult ExternalLoginFailure()
         {
             return View();
         }
           
-
+        [AllowAnonymous]
         public ActionResult Unauthorised()
         {
 
@@ -442,7 +443,7 @@ namespace Site.Area.admin.Controllers
                 return HttpContext.GetOwinContext().Authentication;
             }
         }
-
+        [AllowAnonymous]
         private void AddErrors(IdentityResult result)
         {
             foreach (var error in result.Errors)
@@ -450,7 +451,7 @@ namespace Site.Area.admin.Controllers
                 ModelState.AddModelError("", error);
             }
         }
-
+        [AllowAnonymous]
         private ActionResult RedirectToLocal(string returnUrl)
         {
             if (Url.IsLocalUrl(returnUrl))

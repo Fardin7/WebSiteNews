@@ -1,0 +1,24 @@
+﻿@model List<NewsOfCategory>
+<div class="col-lg-4 ">
+    @foreach (var item in Model)
+    {
+        <div class="trand-right-single d-flex">
+            <div class="trand-right-img">
+                <img style="width:120px;height:100px;" src="@item.News.FirstOrDefault().ImageAddress" alt="">
+            </div>
+            <div class="trand-right-cap">
+                <span class="color1">@item.Title</span>
+                <h4>
+                    @{ var newstype = Resource.Resource.News;
+                           }
+
+                    @Html.RouteLink(item.News.FirstOrDefault().Title, "news", new { type = newstype, id = item.News.SingleOrDefault().Title, newscattegory = item.News.SingleOrDefault().NewsSubCategory.NewsCategory.Title, cattegory = item.Title })
+
+                </h4>
+            </div>
+        </div>
+
+    }
+
+
+</div>

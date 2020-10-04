@@ -1,0 +1,29 @@
+﻿@model NewsIndexPaging
+<nav class="blog-pagination justify-content-center d-flex" id=newspagingcontiner>
+    <ul class="pagination">
+        @*<li class="page-item">
+            <a href="#" class="page-link" aria-label="Previous">
+                <i class="ti-angle-left"></i>
+            </a>
+        </li>*@
+        @for (int i = 1; i <= Model.Pages && i <= 2; i++)
+        {
+            
+            <li   class="page-item" id="@i" onclick="newsofcategorandnewscategory(@Model.Count, @i, @Model.NewsType, @Model.NewsCategory, @Model.Category)" >
+                <a class="page-link">@i</a>
+            </li>
+        }
+
+
+        @if (Model.Pages >= 3)
+        {
+            <li class="page-item" onclick="newsofnewsandnewscategorypaging(@Model.NewsType, @Model.Category, @Model.NewsCategory, @Model.Count, @Model.PageNumber, @Model.Pages)">
+                <a  class="page-link" aria-label="Next">
+                    <i class="ti-angle-right"></i>
+                </a>
+            </li>
+        }
+
+    </ul>
+</nav>
+

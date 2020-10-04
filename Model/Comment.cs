@@ -12,7 +12,9 @@ namespace Model
     {
         public int Id { get; set; }
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType =typeof(Resource.Resource))]
-        [Display(Name= "Description", ResourceType =typeof(Resource.Resource))]     
+        [Display(Name= "Description", ResourceType =typeof(Resource.Resource))]  
+        [MaxLength(400,ErrorMessageResourceName  ="DescriptionLength",ErrorMessageResourceType = typeof(Resource.Resource))]
+
         public string Description { get; set; }
         [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(Resource.Resource))]
         [Display(Name = "Name", ResourceType = typeof(Resource.Resource))]

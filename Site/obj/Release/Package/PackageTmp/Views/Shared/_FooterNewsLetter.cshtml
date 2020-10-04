@@ -1,0 +1,34 @@
+﻿@model Model.NewsLetter
+<div class="col-xl-3 col-lg-3 col-md-4  col-sm-6">
+    <div class="single-footer-caption mt-60">
+        <div class="footer-tittle">
+            <h4>@Resource.Resource.NewsLetter</h4>
+            <p>Heaven fruitful doesn't over les idays appear creeping</p>
+            <!-- Form -->
+            <div class="footer-form">
+                <div id="mc_embed_signup">
+                    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "footernewsletterForm", @class = "subscribe_form relative mail_part" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                        @Html.TextBoxFor(a => a.Email, null, new { @class = "placeholder hide-on-focus", type = "email", onfocus = "this.placeholder = ''", onblur = "this.placeholder = 'ایمیل'", placeholder = "ایمیل" })
+                        @Html.ValidationMessageFor(a => a.Email)
+
+                        @*<input type="email" name="email" id="newsletter-form-email" placeholder="Email Address"
+                               class="placeholder hide-on-focus" onfocus="this.placeholder = ''"
+                               onblur="this.placeholder = ' Email Address '">*@
+                        <div class="form-icon">
+                            <button type="button" name="submit" id="newsletter-submit"
+                                    class="email_icon newsletter-submit button-contactForm">
+                                <img src="~/WebSiteContent/assets/img/logo/form-iocn.png" alt="">
+                            </button>
+                        </div>
+                        <div class="mt-10 info" style="color:red" id="resultoffooternewsletter"></div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

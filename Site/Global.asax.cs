@@ -6,6 +6,7 @@ using System.Configuration;
 using System.Linq;
 using System.Threading;
 using System.Web;
+using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -22,6 +23,7 @@ namespace Site
         }
         protected void Application_Start()
         {
+            AntiForgeryConfig.SuppressXFrameOptionsHeader = true;
 
             UnityConfig.RegisterComponents();
             AreaRegistration.RegisterAllAreas();
@@ -68,15 +70,17 @@ namespace Site
             var message = ex.Message;
 
             Logger.Error(string.Format("External Error...{0}", message), ex);
-            // Server.ClearError();
-            //if (statuscode == 404)
-            //{
-            //    Response.Redirect("/Home/NotFound");
-            //}
-            //else
-            //{
-            //    Response.Redirect("/Home/Error");
-            //}
+            Server.ClearError();
+            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr9.txt"), message );
+
+            if (statuscode == 404)
+            {
+                Response.Redirect("/Home/NotFound");
+            }
+            else
+            {
+                Response.Redirect("/Home/Error");
+            }
 
         }
 

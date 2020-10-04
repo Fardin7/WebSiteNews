@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/themify-icons.css">
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/slick.css">
-    <link rel="stylesheet" href="~/WebSiteContent/asset//css/rtl/nice-select.css">
+    <link rel="stylesheet" href="~/WebSiteContent/assets//css/rtl/nice-select.css">
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/style.css">
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/ticker-style.css">
     @*@Styles.Render("")*@
@@ -35,7 +35,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="assets/img/logo/logo.png" alt="">
+                    <img src="~/WebSiteContent/assets/img/logo/logo.png" alt="">
                 </div>
             </div>
         </div>
@@ -59,6 +59,18 @@
                                         <li>
                                             <img src="~/WebSiteContent/assets/img/icon/header_icon1.png" alt="">شنبه ، 25 مرداد ، 1399
                                         </li>
+                                        <li>
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <a href="/admin">پنل مدیریت</a>
+                                            }
+                                        </li>
+                                        <li>
+                                            @if (User.Identity.IsAuthenticated)
+                                            {
+                                                <a href="/admin/account/LogOff">خروج</a>
+                                            }
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="header-info-right">
@@ -78,16 +90,16 @@
                             <!-- Logo -->
                             <div class="col-xl-3 col-lg-3 col-md-3">
                                 <div class="logo">
-                                    <a href="index.html">
+                                    <a href="/">
                                         <img src="~/WebSiteContent/assets/img/logo/logo.png" alt="">
                                     </a>
                                 </div>
                             </div>
-                            <div class="col-xl-9 col-lg-9 col-md-9">
-                                <div class="header-banner f-right ">
-                                    <img src="~/WebSiteContent/assets/img/hero/header_card.jpg" alt="">
-                                </div>
-                            </div>
+                            @*<div class="col-xl-9 col-lg-9 col-md-9">
+                                    <div class="header-banner f-right ">
+                                        <img src="~/WebSiteContent/assets/img/hero/header_card.jpg" alt="">
+                                    </div>
+                                </div>*@
                         </div>
                     </div>
                 </div>
@@ -106,7 +118,7 @@
                                     <nav>
                                         <ul id="navigation">
 
-                                            <li><a href="index.html">خانه</a></li>
+                                            <li><a href="/">خانه</a></li>
                                             <li>
                                                 @{var Newslink = Url.RouteUrl("newsofallnewscategory", new { type = "اخبار", newscount = 4 }); }
                                                 @{var Articlelink = Url.RouteUrl("newsofallnewscategory", new { type = "مقاله", newscount = 4 }); }

@@ -1,11 +1,12 @@
 ﻿@model List<Model.News>
     <aside class="single_sidebar_widget popular_post_widget">
         @{
-            var newstype = "";
+            var newstype = 0;
             if (Model.Count > 0)
             {
 
-                 newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType),Thread.CurrentThread.CurrentUICulture);
+                newstype = Model[0].NewsType;
+                //CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType),Thread.CurrentThread.CurrentUICulture);
             }
         }
         @if (Model.Count > 0)
@@ -21,7 +22,11 @@
 
 
                         </a>
-                        <p>@item.PublishDate.Value.Month @item.PublishDate.Value.Day, @item.PublishDate.Value.Year</p>
+                        @if (item.PublishDate!=null)
+                        {
+                            <p>@item.PublishDate.Value.Month @item.PublishDate.Value.Day, @item.PublishDate.Value.Year</p>
+
+                        }
                     </div>
                 </div>
             }

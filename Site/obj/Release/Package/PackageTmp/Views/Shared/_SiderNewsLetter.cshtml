@@ -1,0 +1,24 @@
+﻿@model Model.NewsLetter
+<aside class="single_sidebar_widget newsletter_widget">
+    <h4 class="widget_title">@Resource.Resource.NewsLetter</h4>
+
+    @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "newsletterForm" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.TextBoxFor(a => a.Email, null, new { @class = "form-control", type = "email", onfocus = "this.placeholder = ''", onblur = "this.placeholder = 'ایمیل'", placeholder = "ایمیل" })
+            @Html.ValidationMessageFor(a => a.Email)
+            @*<input type="email" class="form-control" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>*@
+        </div>
+        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                type="button" id="registernewsletter">
+            @Resource.Resource.Send
+        </button>
+        <p id="newsletterregisterresult">  
+
+        </p>
+    }
+</aside>
+

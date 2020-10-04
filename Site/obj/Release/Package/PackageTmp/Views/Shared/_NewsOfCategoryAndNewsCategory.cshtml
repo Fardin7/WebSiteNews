@@ -1,0 +1,50 @@
+﻿@model List<Model.News>
+@{
+
+    var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType), Thread.CurrentThread.CurrentUICulture);
+}
+@if (Model.Count >= 2)
+{
+    <div class="navigation-area" id="relatednews">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
+                <div class="thumb">
+                    <a>
+                        <img class="img-fluid" style="width:60px;height:60px;" src="@Model[0].ImageAddress" alt="">
+                    </a>
+                </div>
+                <div class="arrow">
+                    <a>
+                        <span class="lnr text-white ti-arrow-left"></span>
+                    </a>
+                </div>
+                <div class="detials">
+                    <p>@Resource.Resource.previous</p>
+
+                    <a href="@Url.RouteUrl("news", new { type =urltype , cattegory = Model[0].Subcategory.Title, newscattegory = Model[0].NewsSubCategory.NewsCategory.Title, id = Model[0].Title })">
+                        <h4>@Model[0].Title</h4>
+                    </a>
+                </div>
+            </div>
+            <div style="cursor:pointer;" class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
+                <div class="detials">
+                    <p>@Resource.Resource.Next</p>
+                    <a href="@Url.RouteUrl("news", new { type =urltype , cattegory = Model[1].Subcategory.Title, newscattegory = Model[1].NewsSubCategory.NewsCategory.Title, id = Model[1].Title })">
+
+                        <h4>@Model[1].Title</h4>
+                    </a>
+                </div>
+                <div class="arrow">
+                    <a>
+                        <span class="lnr text-white ti-arrow-right"></span>
+                    </a>
+                </div>
+                <div class="thumb" onclick="pagingrelatednews('@Model[1].NewsType', '@Model[1].Subcategory.Id', '@Model[1].NewsSubCategory.NewsCategory.Id', 2, 2,@ViewBag.pagecount)">
+                    <a>
+                        <img class="img-fluid" style="width:60px;height:60px;" src="@Model[1].ImageAddress" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+}

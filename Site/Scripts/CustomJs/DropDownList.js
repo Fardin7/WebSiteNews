@@ -45,7 +45,7 @@ $(function () {
 
             success: function (data) {
 
-                var url = "/admin" + $(data).attr("action");
+                var url = $(data).attr("action");
                 var formid = $(data).attr("id");
                 $('.modal-body').html(data);
                 $('#myModal').modal(options);
@@ -60,7 +60,7 @@ $(function () {
 
                     $.ajax({
                         type: "POST",
-                        url: "/admin" + url,
+                        url:  url,
                         data: $("#" + formid).serialize(),
                         success: function (data) {
                             $("#" + dropdownid).empty();
@@ -232,7 +232,7 @@ $("#submiteditform").click(function () {
                         "<img src='/PanelFile/Icons/deletefileicon.png' style='width:25px;' id='deletefile' />")
                     $("#deletefile").click(deleteclick);
                 }
-
+                alert("تغییرات با موفقیت انجام شد")
             }
             else {
                 alert("fail1")

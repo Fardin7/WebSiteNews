@@ -32,8 +32,12 @@
 
 
                                     <a href="@item.Url" class="blog_item_date">
-                                        <h3>@item.PublishDate.Day</h3>
-                                        <p>@item.PublishDate.Month</p>
+                                        @if (item.PublishDate != null)
+                                        {
+                                            <h3>@item.PublishDate.Day</h3>
+                                            <p>@item.PublishDate.Month</p>
+                                        }
+
                                     </a>
                                 </div>
 

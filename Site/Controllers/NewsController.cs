@@ -38,8 +38,9 @@ namespace Site.Controllers
             _newsFileService = newsFileService;
         }
         // GET: user/News
-        public ActionResult Index(string type, string categoryname, string newscategoryname)
+        public ActionResult Index(int type, string categoryname, string newscategoryname)
         {
+            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr8888.txt"), type + "  " + categoryname + "  " + newscategoryname);
 
 
             var newscategoryid = 0;
@@ -54,9 +55,10 @@ namespace Site.Controllers
                 categoryid= _categoryService.Get(q => q.Title == categoryname).FirstOrDefault().Id;
 
             }
-          
 
-            var newstype = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
+            //  Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fa-IR");
+            var newstype = type;
+                //(int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
 
             var model = _newsService.ListNewsOfNewsCategoryAndCategory(newstype, categoryname, newscategoryname, 4);
             double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname).Where(q => q.NewsType == newstype).Count();
@@ -124,9 +126,11 @@ namespace Site.Controllers
         }
 
         // GET: user/News/Details/5
-        public ActionResult Details(string id, string type)
+        public ActionResult Details(string id, int type)
         {
-            var typeint = (int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
+            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr10.txt"), id);
+            var typeint = type;
+                //(int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
             return View(_newsService.GetByTitleAndType(id, typeint));
 
         }

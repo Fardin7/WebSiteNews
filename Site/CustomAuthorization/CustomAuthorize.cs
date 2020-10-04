@@ -59,6 +59,7 @@ namespace Site.CustomAuthorization
                 {
                     if (item.Acrion == function && item.Entity == entity)
                     {
+                        
                         authorize = true;
                         break;
                     }

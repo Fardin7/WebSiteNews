@@ -1,0 +1,34 @@
+﻿@model Paging
+
+
+
+<div class="pagination-area pb-45 text-center">
+    <div class="container">
+        <div class="row" id="pagingcontainer">
+            <div class="col-xl-12">
+                <div class="single-wrap d-flex justify-content-center">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-start">
+                            @* <li class="page-item"  onclick="arrowpaging( leftcounter , @Model.pages , newstype , newscategory)"  ><a class="page-link" href="#"><span class="flaticon-arrow roted"></span></a></li>*@
+                            @for (var i = 1; i <= Model.pages; i++)
+                            {
+                                var newscategory = Model.newscategory;
+
+                                <li class="page-item"  id="@i"><a class="page-link"  onclick='pagingnews(4,i,@Model.newstype,@Model.newscategory)'>@i</a></li>
+
+                            }
+
+                            @if (Model.pages>3)
+                            {
+                                <li class="page-item" onclick="arrowpaging( 4 , @Model.pages , @Model.newstype , @Model.newscategory)"><a class="page-link" href="#"><span class="flaticon-arrow right-arrow"></span></a></li>
+
+                            }
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -3,13 +3,13 @@
         <h3 class="widget_title">@Resource.Resource.Recent_Post</h3>
         @foreach (var item in Model)
         {
-            @{ var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.NewsType),Thread.CurrentThread.CurrentUICulture)}
+            //var newstype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.NewsType), Thread.CurrentThread.CurrentUICulture);
             <div class="media post_item">
                 <img src="@item.ImageAddress" alt="@item.Title" style="width:80px;height:80px;">
 
                 @{ var alink = Url.RouteUrl("news", new
                     {
-                        type = newstype,
+                        type = item.NewsType,
                         cattegory = item.Subcategory.Title,
                         newscattegory = item.NewsSubCategory.NewsCategory.Title,
                         id = item.Title

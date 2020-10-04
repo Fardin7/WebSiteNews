@@ -17,19 +17,19 @@
     <!-- icheck bootstrap -->
     <link rel="stylesheet" href="~/PanelFile/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="~/PanelFile/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/PanelFile/dist/css/adminlte.css">
     <!-- Google Font: Source Sans Pro -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition login-page">
     <div class="login-box">
-        <div class="login-logo">
+        @*<div class="login-logo">
             <a href="../../index2.html"><b>Admin</b>LTE</a>
-        </div>
+        </div>*@
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                @*<p class="login-box-msg">Sign in to start your session</p>*@
 
                 @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
                 {
@@ -59,6 +59,7 @@
                                 @Html.CheckBoxFor(m => m.RememberMe)
 
                                 <label for="remember">
+                                    
                                     Remember Me
                                 </label>
                             </div>
@@ -66,7 +67,7 @@
                         <!-- /.col -->
                         <div class="col-4">
 
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block">@Resource.Resource.Send</button>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -83,12 +84,12 @@
                     </div>*@
                 <!-- /.social-auth-links -->
 
-                <p class="mb-1">
+                @*<p class="mb-1">
                     <a href="forgot-password.html">I forgot my password</a>
                 </p>
                 <p class="mb-0">
                     <a href="register.html" class="text-center">Register a new membership</a>
-                </p>
+                </p>*@
             </div>
             <!-- /.login-card-body -->
         </div>

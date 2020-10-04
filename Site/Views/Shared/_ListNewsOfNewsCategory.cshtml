@@ -58,7 +58,7 @@
                                                 <span class="color1">@news.Title</span>
                                                 <h4>
                                                     @{ var newstype = Resource.Resource.News;}
-                                                    @Html.RouteLink(news.Description, "news", new { type = newstype, cattegory = news.Subcategory.Title, newscattegory = news.NewsSubCategory.NewsCategory.Title, id = news.Title })
+                                                    @Html.RouteLink(news.Description.Substring(0,(int)FixValue.DescriptionLength), "news", new { type = (int)NewsType.News, cattegory = news.Subcategory.Title, newscattegory = news.NewsSubCategory.NewsCategory.Title, id = news.Title })
 
 
 

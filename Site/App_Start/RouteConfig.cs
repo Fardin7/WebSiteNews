@@ -14,6 +14,7 @@ namespace Site
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+
             routes.MapRoute(
                       "newsofallnewscategory",
                       "همه دسته بندی ها-{type}-{newscount}",
@@ -48,14 +49,14 @@ namespace Site
             routes.MapRoute(
                         "newsofnewscategoryandcategory",
                         "{type}-{categoryname}-{newscategoryname}",
-                         new { controller = "News", action = "Index", categoryname=UrlParameter.Optional, newscategoryname =UrlParameter.Optional},
+                         new { controller = "News", action = "Index", categoryname = UrlParameter.Optional, newscategoryname = UrlParameter.Optional },
                          namespaces: new[] { "Site.Controllers" }
                     );
 
             routes.MapRoute(
                         "contactus",
                         "تماس با ما",
-                         new { controller = "Contact", action = "Index"},
+                         new { controller = "Contact", action = "Index" },
                          namespaces: new[] { "Site.Controllers" }
                     );
             routes.MapRoute(
@@ -64,13 +65,13 @@ namespace Site
                         new { controller = "AboutUs", action = "Index" },
                         namespaces: new[] { "Site.Controllers" }
                    );
-
             routes.MapRoute(
-         name: "Default",
-         url: "{controller}/{action}/{id}",
-         defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
-         namespaces: new[] { "Site.Controllers" }
-     );
+name: "Default",
+url: "{controller}/{action}/{id}",
+defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional },
+namespaces: new[] { "Site.Controllers" }
+);
+
             //  routes.Add("DetailsDetails", new GetSEOFriendlyRoute("مقاله/جامعه/{id}",
             //new RouteValueDictionary(new { controller = "Article", action = "Details" }),
             //new MvcRouteHandler()));

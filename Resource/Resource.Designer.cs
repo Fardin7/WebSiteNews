@@ -106,6 +106,15 @@ namespace Resource {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Minimum Linght of Description is 70.
+        /// </summary>
+        public static string DescriptionLength {
+            get {
+                return ResourceManager.GetString("DescriptionLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Email.
         /// </summary>
         public static string Email {

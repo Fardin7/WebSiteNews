@@ -5,7 +5,7 @@
         @foreach (var item in Model)
         {
             
-                var newstype = Resource.Resource.Report;
+              //  var newstype = Resource.Resource.Report;
 
 
             <div class="col-lg-4">
@@ -16,7 +16,7 @@
                     <div class="trend-bottom-cap">
                         <span class="color1">@item.Title</span>
                         <h4>
-                            @Html.RouteLink(item.Description, "news", new { type = newstype, cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
+                            @Html.RouteLink(item.Description.Substring(0,(int)FixValue.DescriptionLength), "news", new { type = item.NewsType, cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
 
                             
 

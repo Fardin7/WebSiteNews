@@ -46,11 +46,12 @@ namespace Site.Area.admin.Controllers
         }
 
         // GET: Articles
-        [OutputCache(Duration = 180,Location =OutputCacheLocation.Server)]
-        // [CustomAuthorize]
+    //    [OutputCache(Duration = 180,Location =OutputCacheLocation.Server)]
+       
         public ActionResult Index()
         {
 
+            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr787.txt"), "interd home");
 
             var article = _service.Get(/*includeProperties: "Title"*/).ToList();
             return View(article);
@@ -72,18 +73,28 @@ namespace Site.Area.admin.Controllers
         }
 
         // GET: Articles/Create
-        [CustomAuthorize]
+        
         public ActionResult Create()
-        { 
-            
-          
-            //Remove the item from cache    
-          // HttpResponse.RemoveOutputCacheItem("/News/Index");
-                //RemoveOutputCacheItem(staleItem);
+        {
 
-            FileManagement._fileManagement = null;
-            ViewBag.CategoryId = new SelectList(_categoryService.Get(), "Id", "Title");
-            ViewBag.NewsCategoryId = new SelectList(_newscategoryService.Get(), "Id", "Title");
+
+            //Remove the item from cache    
+            // HttpResponse.RemoveOutputCacheItem("/News/Index");
+            //RemoveOutputCacheItem(staleItem);
+            try
+            {
+                FileManagement._fileManagement = null;
+                ViewBag.CategoryId = new SelectList(_categoryService.Get(), "Id", "Title");
+                ViewBag.NewsCategoryId = new SelectList(_newscategoryService.Get(), "Id", "Title");
+
+            }
+            catch (Exception ex)
+            {
+                
+                System.IO.File.WriteAllText(Server.MapPath("~/Content/errr.txt"), ex.Message);
+                return View();
+            }
+           
             return View();
         }
         [HttpGet]
@@ -216,6 +227,7 @@ namespace Site.Area.admin.Controllers
                     var address = TempData["NewsAddressImage"].ToString();
                     HttpPostedFileBase file = (HttpPostedFileBase)TempData["NewsImageFile"];
                     news.ImageAddress = address;
+                   
                     file.SaveAs(Server.MapPath(address));
                     TempData["NewsAddressImage"] = null;
                     TempData["NewsFile"] = null;

@@ -1,0 +1,159 @@
+﻿@model Model.News
+@{
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section css{
+    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/responsive.css">
+}
+@section scripts{
+
+    <script src="~/Scripts/CustomJs/Paging.js"></script>
+    <script src="~/Scripts/CustomJs/DropDownList.js"></script>
+    @Scripts.Render("~/bundles/jqueryval")
+}
+
+
+<section class="blog_area single-post-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post">
+                    <div class="feature-img">
+                        <img style="width:750px;height:375px;" class="img-fluid" src="@Model.ImageAddress" alt="">
+                    </div>
+                    <div class="blog_details">
+                        <h2>
+                            @Model.Title
+                        </h2>
+                        <ul class="blog-info-link mt-3 mb-4">
+                            <li><a href="#"><i class="fa fa-user"></i> @Model.Subcategory.Title, @Model.NewsSubCategory.NewsCategory.Title</a></li>
+                            <li><a href="#"><i class="fa fa-comments"></i> @*@Model.ApplicationUser.UserName*@</a></li>
+                        </ul>
+                        @Html.Raw(Model.Body)                    
+                    </div>
+                </div>
+                <div class="navigation-top">
+                    <div class="d-sm-flex justify-content-between text-center">
+                        @*<p class="like-info">
+                            <span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
+                            people like this
+                        </p>*@
+                        <div class="col-sm-4 text-center my-2 my-sm-0">
+                            <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
+                        </div>
+                        <ul class="social-icons">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
+                            <li><a href="#"><i class="fab fa-behance"></i></a></li>
+                        </ul>
+                    </div>
+
+                    @Html.Action("IndexPartial", "News", new { type = Model.NewsType, categoryname = Model.Subcategory.Title, newscategoryname = Model.NewsSubCategory.NewsCategory.Title, partialname = "_NewsOfCategoryAndNewsCategory", count = 2 })
+
+
+                </div>
+                @*<div class="blog-author">
+                    <div class="media align-items-center">
+                        <img src="assets/img/blog/author.png" alt="">
+                        <div class="media-body">
+                            <a href="#">
+                                <h4>Harvard milan</h4>
+                            </a>
+                            <p>
+                                Second divided from form fish beast made. Every of seas all gathered use saying you're, he
+                                our dominion twon Second divided from
+                            </p>
+                        </div>
+                    </div>
+                </div>*@
+
+                @Html.Action("PartialCommet", "Comment", new { newsid = Model.Id })
+
+            </div>
+            <div class="col-lg-4">
+                <div class="blog_right_sidebar">
+                    <aside class="single_sidebar_widget search_widget">
+                        <form action="#">
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" placeholder='@Resource.Resource.Search_Keyword'
+                                           onfocus="this.placeholder = ''" onblur="this.placeholder = '@Resource.Resource.Search_Keyword'">
+                                    <div class="input-group-append">
+                                        <button class="btns" type="button"><i class="ti-search"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
+                                    type="submit">
+                                @Resource.Resource.Search
+                            </button>
+                        </form>
+                    </aside>
+
+                    @Html.Action("IndexPartial", "NewsCategory", new { partialname = "_NewsCategoryList", newstype = Model.NewsType })
+
+
+                    @Html.Action("IndexPartial", "News", new { type = Model.NewsType, categoryname = Model.Subcategory.Category.Title, partialname = "_NewsOfCategory", count = 4 })
+
+                    @if (Model.KeyWord != null)
+                    {
+                        <aside class="single_sidebar_widget tag_cloud_widget">
+                            <h4 class="widget_title">@Resource.Resource.Tag_Clouds</h4>
+
+                            <ul class="list">
+                                @for (int i = 0; i < Model.KeyWord.Split(new char[] { ',' }).Length; i++)
+                                {
+                                    <li>
+                                        <a href="#">@Model.KeyWord.Split(new char[] { ',' })[i]</a>
+                                    </li>
+                                }
+
+
+                            </ul>
+                        </aside>
+                    }
+
+                    @*<aside class="single_sidebar_widget instagram_feeds">
+                        <h4 class="widget_title">@Resource.Resource.twitter_Feeds</h4>
+                        <ul class="instagram_row flex-wrap">
+                            <li>
+                                <a href="#">
+                                    <img class="img-fluid" src="assets/img/post/post_5.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="img-fluid" src="assets/img/post/post_6.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="img-fluid" src="assets/img/post/post_7.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="img-fluid" src="assets/img/post/post_8.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="img-fluid" src="assets/img/post/post_9.png" alt="">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <img class="img-fluid" src="assets/img/post/post_10.png" alt="">
+                                </a>
+                            </li>
+                        </ul>
+                    </aside>*@
+                    @Html.Action("Create", "NewsLetter", new { partialname = "_SiderNewsLetter" })
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

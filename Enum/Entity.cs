@@ -1,7 +1,14 @@
 ﻿ public enum Entity
 {
-    article=0,
-    news=1,
-    gallery=2
+    news=0,
+    setting,
+    subcategories,
+    newssubcategories,
+    newscategories,
+    manage,
+    home,
+    categories,
+    admin,
+    account
 
 }

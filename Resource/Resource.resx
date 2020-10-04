@@ -132,6 +132,9 @@
   <data name="Description" xml:space="preserve">
     <value>Description</value>
   </data>
+  <data name="DescriptionLength" xml:space="preserve">
+    <value>Minimum Linght of Description is 70</value>
+  </data>
   <data name="Email" xml:space="preserve">
     <value>Email</value>
   </data>

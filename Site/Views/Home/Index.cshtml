@@ -7,7 +7,7 @@
 }
 
 @section css{
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/ticker-style.css">
+    @*<link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/ticker-style.css">*@
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/flaticon.css">
 
 
@@ -25,8 +25,8 @@
                         <!-- Trending Top -->
                         @Html.Action("BannerNews", "News")
                         <!-- Trending Bottom -->
-                     
-                       @Html.Action("LastNews","News",new {  newscount=3,  newstype=(int)NewsType.Report,  partialname="_LastReport"})
+
+                        @Html.Action("LastNews", "News", new { newscount = 3, newstype = (int)NewsType.Report, partialname = "_LastReport" })
                     </div>
                     <!-- Riht content -->
 
@@ -110,9 +110,9 @@
                         </div>
                     </div>
                     <!-- New Poster -->
-                    <div class="news-poster d-none d-lg-block">
-                        <img src="WebSiteContent/assets/img/news/news_card.jpg" alt="">
-                    </div>
+                    @*<div class="news-poster d-none d-lg-block">
+                            <img src="WebSiteContent/assets/img/news/news_card.jpg" alt="">
+                        </div>*@
                 </div>
             </div>
         </div>
@@ -135,22 +135,22 @@
                 <div class="col-12">
                     <div class="video-items-active">
                         @*<div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-items text-center">
+                                <iframe src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-items text-center">
+                                <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                        </div>
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="video-items text-center">
+                                <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-                        </div>
-                        <div class="video-items text-center">
-                            <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                        </div>*@
+                            </div>
+                            <div class="video-items text-center">
+                                <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>*@
                     </div>
                 </div>
             </div>
@@ -170,35 +170,35 @@
                     <div class="col-lg-6">
                         <div class="testmonial-nav text-center">
                             @*<div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                    <iframe src="https://www.youtube.com/embed/CicQIuG8hBo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="video-intro">
+                                        <h4>Welcotme To The Best Model Winner Contest</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                <div class="single-video">
+                                    <iframe src="https://www.youtube.com/embed/rIz00N40bag" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="video-intro">
+                                        <h4>Welcotme To The Best Model Winner Contest</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                <div class="single-video">
+                                    <iframe src="https://www.youtube.com/embed/CONfhrASy44" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="video-intro">
+                                        <h4>Welcotme To The Best Model Winner Contest</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Welcotme To The Best Model Winner Contest</h4>
+                                <div class="single-video">
+                                    <iframe src="https://www.youtube.com/embed/lq6fL2ROWf8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="video-intro">
+                                        <h4>Welcotme To The Best Model Winner Contest</h4>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="single-video">
-                                <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                <div class="video-intro">
-                                    <h4>Welcotme To The Best Model Winner Contest</h4>
-                                </div>
-                            </div>*@
+                                <div class="single-video">
+                                    <iframe src="https://www.youtube.com/embed/0VxlQlacWV4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                                    <div class="video-intro">
+                                        <h4>Welcotme To The Best Model Winner Contest</h4>
+                                    </div>
+                                </div>*@
                         </div>
                     </div>
                 </div>
@@ -228,5 +228,6 @@
 
     <script src="~/Scripts/CustomJs/Paging.js"></script>
     <script src="~/Scripts/CustomJs/DropDownList.js"></script>
+    <script src="~/WebSiteContent/assets/js/jquery.ticker-rtl.js"></script>
 
 }
