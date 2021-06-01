@@ -21,3 +21,30 @@ D:\Project_backup\New folder\WebSiteNews\Business\obj\Release\Business.csprojAss
 D:\Project_backup\New folder\WebSiteNews\Business\obj\Release\Business.csproj.CopyComplete
 D:\Project_backup\New folder\WebSiteNews\Business\obj\Release\Business.dll
 D:\Project_backup\New folder\WebSiteNews\Business\obj\Release\Business.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Business.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Business.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\DAL.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Model.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Service.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Resource.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Repository.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\DAL.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\DAL.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Model.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Service.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Resource.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Repository.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\Repository.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\fa\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\bin\Release\fa-IR\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\obj\Release\Business.csprojAssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Business\obj\Release\Business.csproj.CopyComplete
+D:\Projectbackup\Newfolder\WebSiteNews\Business\obj\Release\Business.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Business\obj\Release\Business.pdb

@@ -49,9 +49,13 @@ namespace Site.Area.admin.Controllers
         // GET: NewsCategories/Create
         public ActionResult Create()
         {
-            return PartialView();
+            return View();
         }
-
+        public ActionResult CreatePartial()
+        {
+            return PartialView("NewsCategoryCreatePartial");
+        }
+        
         // POST: NewsCategories/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
@@ -81,69 +85,76 @@ namespace Site.Area.admin.Controllers
         }
 
         // GET: NewsCategories/Edit/5
-    //    public ActionResult Edit(int? id)
-    //    {
-    //        if (id == null)
-    //        {
-    //            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-    //        }
-    //        NewsCategory newsCategory = db.NewsCategories.Find(id);
-    //        if (newsCategory == null)
-    //        {
-    //            return HttpNotFound();
-    //        }
-    //        return View(newsCategory);
-    //    }
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            NewsCategory newsCategory = _service.GetByID(id);
+            if (newsCategory == null)
+            {
+                return HttpNotFound();
+            }
+            return View(newsCategory);
+        }
 
-    //    // POST: NewsCategories/Edit/5
-    //    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-    //    // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-    //    [HttpPost]
-    //    [ValidateAntiForgeryToken]
-    //    public ActionResult Edit([Bind(Include = "Id,Title,IsActive,CreateDate")] NewsCategory newsCategory)
-    //    {
-    //        if (ModelState.IsValid)
-    //        {
-    //            db.Entry(newsCategory).State = EntityState.Modified;
-    //            db.SaveChanges();
-    //            return RedirectToAction("Index");
-    //        }
-    //        return View(newsCategory);
-    //    }
+        //    // POST: NewsCategories/Edit/5
+        //    // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        //    // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Title,IsActive,CreateDate")] NewsCategory newsCategory)
+        {
+            if (ModelState.IsValid)
+            {
+                _service.Update(newsCategory);
+                _unitOfWork.Complete();
+                return RedirectToAction("Index");
+            }
+            return View(newsCategory);
+        }
 
-    //    // GET: NewsCategories/Delete/5
-    //    public ActionResult Delete(int? id)
-    //    {
-    //        if (id == null)
-    //        {
-    //            return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-    //        }
-    //        NewsCategory newsCategory = db.NewsCategories.Find(id);
-    //        if (newsCategory == null)
-    //        {
-    //            return HttpNotFound();
-    //        }
-    //        return View(newsCategory);
-    //    }
+        // GET: NewsCategories/Delete/5
+        public string Delete(int? id)
+        {
+            if (id == null)
+            {
+                return "id is not nullable";
+            }
+            try
+            {
+                _service.Delete(id);
+                _unitOfWork.Complete();
+                return "ok";
 
-    //    // POST: NewsCategories/Delete/5
-    //    [HttpPost, ActionName("Delete")]
-    //    [ValidateAntiForgeryToken]
-    //    public ActionResult DeleteConfirmed(int id)
-    //    {
-    //        NewsCategory newsCategory = db.NewsCategories.Find(id);
-    //        db.NewsCategories.Remove(newsCategory);
-    //        db.SaveChanges();
-    //        return RedirectToAction("Index");
-    //    }
+            }
+            catch (Exception ex)
+            {
 
-    //    protected override void Dispose(bool disposing)
-    //    {
-    //        if (disposing)
-    //        {
-    //            db.Dispose();
-    //        }
-    //        base.Dispose(disposing);
-    //    }
+                return ex.Message;
+            }
+
+        }
+
+        //    // POST: NewsCategories/Delete/5
+        //    [HttpPost, ActionName("Delete")]
+        //    [ValidateAntiForgeryToken]
+        //    public ActionResult DeleteConfirmed(int id)
+        //    {
+        //        NewsCategory newsCategory = db.NewsCategories.Find(id);
+        //        db.NewsCategories.Remove(newsCategory);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
+
+        //    protected override void Dispose(bool disposing)
+        //    {
+        //        if (disposing)
+        //        {
+        //            db.Dispose();
+        //        }
+        //        base.Dispose(disposing);
+        //    }
     }
 }

@@ -31,6 +31,7 @@ namespace Site
 
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            log4net.Config.XmlConfigurator.Configure();
         }
         protected void Application_Error()
         {
@@ -62,17 +63,13 @@ namespace Site
             //}
             var ex = Server.GetLastError();
             var statuscode = 0;
-            if (ex is HttpException)
+                if (ex is HttpException)
             {
                 statuscode = ((HttpException)ex).GetHttpCode();
             }
-            var type = ex.GetType().Name;
             var message = ex.Message;
-
             Logger.Error(string.Format("External Error...{0}", message), ex);
-            Server.ClearError();
-            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr9.txt"), message );
-
+            Server.ClearError();        
             if (statuscode == 404)
             {
                 Response.Redirect("/Home/NotFound");

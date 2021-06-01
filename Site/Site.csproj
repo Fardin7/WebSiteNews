@@ -167,11 +167,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CategoryImage\CategoryDefaultImage.jpg" />
-    <Content Include="Content1\bootstrap-theme.css" />
-    <Content Include="Content1\bootstrap-theme.min.css" />
-    <Content Include="Content1\bootstrap.css" />
-    <Content Include="Content1\bootstrap.min.css" />
-    <Content Include="Content1\Site.css" />
+    <Content Include="Scripts\CustomJs\NewsCategory.js" />
+    <Content Include="Scripts\CustomJs\NewsSubCategory.js" />
+    <Content Include="SubCategoryImage\SubCategoryDefaultImage.jpg" />
     <Content Include="Content\bootstrap-datetimepicker.css" />
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap-theme.css" />
@@ -209,17 +207,8 @@
     <Content Include="datepicker\datetimepicker-master\tests\tests\init.js" />
     <Content Include="datepicker\datetimepicker-master\tests\tests\methods.js" />
     <Content Include="datepicker\datetimepicker-master\tests\tests\options.js" />
-    <Content Include="fonts1\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="fonts1\glyphicons-halflings-regular.woff2" />
-    <Content Include="fonts1\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts1\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts1\glyphicons-halflings-regular.eot" />
-    <Content Include="Content1\bootstrap.min.css.map" />
-    <Content Include="Content1\bootstrap.css.map" />
-    <Content Include="Content1\bootstrap-theme.min.css.map" />
-    <Content Include="Content1\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap.css.map" />
@@ -574,6 +563,11 @@
     <Content Include="datepicker\datetimepicker-master\package.json" />
     <Content Include="datepicker\datetimepicker-master\pull_request_template.md" />
     <Content Include="datepicker\datetimepicker-master\README.md" />
+    <Content Include="Scripts\CustomJs\SubCategory.js" />
+    <Content Include="Scripts\CustomJs\Categories.js" />
+    <Content Include="Scripts\CustomJs\Paging.js" />
+    <Content Include="Scripts\CustomJs\TopNews.js" />
+    <Content Include="Scripts\CustomJs\TrendingNews.js" />
     <Content Include="WebSiteContent\assets\css\animate.min.css" />
     <Content Include="WebSiteContent\assets\css\bootstrap.min.css" />
     <Content Include="WebSiteContent\assets\css\flaticon.css" />
@@ -584,6 +578,21 @@
     <Content Include="WebSiteContent\assets\css\nice-select.css" />
     <Content Include="WebSiteContent\assets\css\owl.carousel.min.css" />
     <Content Include="WebSiteContent\assets\css\responsive.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\animate.min.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\bootstrap.min.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\flaticon.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\fontawesome-all.min.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\gijgo.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\magnific-popup.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\main.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\nice-select.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\owl.carousel.min.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\responsive.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\slick.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\slicknav.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\style.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\themify-icons.css" />
+    <Content Include="WebSiteContent\assets\css\rtl\ticker-style.css" />
     <Content Include="WebSiteContent\assets\css\slick.css" />
     <Content Include="WebSiteContent\assets\css\slicknav.css" />
     <Content Include="WebSiteContent\assets\css\style.css" />
@@ -650,6 +659,7 @@
     <Content Include="WebSiteContent\assets\img\hero\header_card.jpg" />
     <Content Include="WebSiteContent\assets\img\icon\header_icon1.png" />
     <Content Include="WebSiteContent\assets\img\icon\header_icon2.png" />
+    <Content Include="WebSiteContent\assets\img\logo\DAHATOU PNG.png" />
     <Content Include="WebSiteContent\assets\img\logo\form-iocn.jpg" />
     <Content Include="WebSiteContent\assets\img\logo\form-iocn.png" />
     <Content Include="WebSiteContent\assets\img\logo\logo.png" />
@@ -745,6 +755,7 @@
     <Content Include="WebSiteContent\assets\js\jquery.scrollUp.min.js" />
     <Content Include="WebSiteContent\assets\js\jquery.slicknav.min.js" />
     <Content Include="WebSiteContent\assets\js\jquery.sticky.js" />
+    <Content Include="WebSiteContent\assets\js\jquery.ticker-rtl.js" />
     <Content Include="WebSiteContent\assets\js\jquery.ticker.js" />
     <Content Include="WebSiteContent\assets\js\jquery.validate.min.js" />
     <Content Include="WebSiteContent\assets\js\mail-script.js" />
@@ -760,6 +771,14 @@
     <Content Include="WebSiteContent\assets\js\wow.min.js" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\News\Details.cshtml" />
+    <Content Include="Areas\admin\Views\Setting\Index.cshtml" />
+    <Content Include="Areas\admin\Views\Setting\TrendingNews.cshtml" />
+    <Content Include="Areas\admin\Views\Setting\BannerNews.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\CategoryCreatePartial.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\SubCategoryCreatePartial.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\NewsCategoryCreatePartial.cshtml" />
+    <Content Include="Areas\admin\Views\Shared\NewsSubCategoryCreatePartial.cshtml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="PanelFile\build\config\postcss.config.js" />
     <Content Include="PanelFile\build\config\rollup.config.js" />
@@ -2582,6 +2601,8 @@
     <Content Include="WebSiteContent\assets\scss\_wecky2-new.scss" />
     <Content Include="WebSiteContent\assets\scss\_whats-new.scss" />
     <Content Include="WebSiteContent\assets\scss\_youtube.scss" />
+    <Content Include="WebSiteContent\assets\css\rtl\main.map" />
+    <Content Include="WebSiteContent\assets\css\rtl\style.map" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -2592,7 +2613,6 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="Areas\admin\adminAreaRegistration.cs" />
     <Compile Include="Areas\admin\Controllers\AccountController.cs" />
-    <Compile Include="Areas\admin\Controllers\AdminController.cs" />
     <Compile Include="Areas\admin\Controllers\BaseController.cs" />
     <Compile Include="Areas\admin\Controllers\CategoriesController.cs" />
     <Compile Include="Areas\admin\Controllers\HomeController.cs" />
@@ -2600,8 +2620,10 @@
     <Compile Include="Areas\admin\Controllers\NewsCategoriesController.cs" />
     <Compile Include="Areas\admin\Controllers\NewsController.cs" />
     <Compile Include="Areas\admin\Controllers\NewsSubCategoriesController.cs" />
+    <Compile Include="Areas\admin\Controllers\SettingController.cs" />
     <Compile Include="Areas\admin\Controllers\SubcategoriesController.cs" />
     <Compile Include="Controllers\AboutUsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\NewsLetterController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
@@ -2616,6 +2638,7 @@
     <Compile Include="Areas\admin\Models\AccountViewModels.cs" />
     <Compile Include="Areas\admin\Models\ManageViewModels.cs" />
     <Compile Include="Areas\admin\Models\NewsViewModels.cs" />
+    <Compile Include="Helper\CultureHelper.cs" />
     <Compile Include="ViewModels\LastNews.cs" />
     <Compile Include="ViewModels\NewsOfCategory.cs" />
     <Compile Include="ViewModels\NewsOfNewsCategory.cs" />
@@ -2669,7 +2692,6 @@
     <Content Include="Areas\admin\Views\News\Details.cshtml" />
     <Content Include="Areas\admin\Views\News\Edit.cshtml" />
     <Content Include="Areas\admin\Views\News\Index.cshtml" />
-    <Content Include="Areas\admin\Views\Admin\Index.cshtml" />
     <Content Include="Areas\admin\Views\Categories\Create.cshtml" />
     <Content Include="Areas\admin\Views\Categories\Delete.cshtml" />
     <Content Include="Areas\admin\Views\Categories\Details.cshtml" />
@@ -2716,6 +2738,11 @@
     <Content Include="Views\Shared\_ContactUs.cshtml" />
     <Content Include="Views\AboutUs\Index.cshtml" />
     <Content Include="Views\Shared\_NewsOfNewsCategoryAndCategoryPaging.cshtml" />
+    <Content Include="Views\Shared\_TrendNews.cshtml" />
+    <Content Include="Views\Shared\_BannerNews.cshtml" />
+    <Content Include="Views\Shared\_LastReport.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Home\NotFound.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -2728,6 +2755,7 @@
     <Folder Include="Areas\admin\Views\Base\" />
     <Folder Include="Areas\admin\Views\Category\" />
     <Folder Include="NewsFiles\" />
+    <Folder Include="Views\Base\" />
     <Folder Include="Views\Category\" />
   </ItemGroup>
   <ItemGroup>
@@ -2774,6 +2802,7 @@
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
+  <PropertyGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />

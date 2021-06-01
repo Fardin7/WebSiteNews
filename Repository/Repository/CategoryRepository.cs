@@ -44,7 +44,7 @@ namespace Repository.Repository
                                   join news in _context.Set<News>()
                                   on subcategory.Id equals news.SubcategoryId into categorysubcategorynews
                                   from csn in categorysubcategorynews
-                                  where csn.NewsType == newstype
+                                  where csn.NewsType == newstype && csn.IsActive
                                   orderby csn.PublishDate descending
                                   group csn by category.Title
                                  );

@@ -21,7 +21,7 @@ namespace Repository.Repository
 
         public News GetByTitleAndType(string title,int type)
         {
-            return dbSet.Where(q => q.Title == title && q.NewsType==type).FirstOrDefault();
+            return dbSet.Where(q => q.Title == title && q.NewsType==type && q.IsActive && q.PublishDate <= DateTime.Now).FirstOrDefault();
         }
         public List<News> GetTrendingNews()
         {
@@ -32,10 +32,10 @@ namespace Repository.Repository
         public List<News> ListNewsOfNewsCategoryAndCategory(int newstype, string categoryname, string newscategoryname,int count)
         {
             if (categoryname!=null && newscategoryname!=null)
-            {
-                return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Title == newscategoryname && q.Subcategory.Title == categoryname && q.NewsType==newstype)).OrderByDescending(q=>q.Id).Take(count).ToList();
+            { 
+                return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Title == newscategoryname && q.Subcategory.Title == categoryname && q.NewsType==newstype && q.IsActive && q.PublishDate <= DateTime.Now)).OrderByDescending(q=>q.Id).Take(count).ToList();
             }
-            return dbSet.Where(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname ).Where(q=>q.NewsType == newstype).OrderByDescending(q => q.Id).Take(count).ToList();
+            return dbSet.Where(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname ).Where(q=>q.NewsType == newstype && q.IsActive && q.PublishDate <= DateTime.Now).OrderByDescending(q => q.Id).Take(count).ToList();
         }
 
         public List<News> RelatedNewsPagin(int newstype, int categoryname, int newscategoryname, int count,int pagenumber)
@@ -45,17 +45,17 @@ namespace Repository.Repository
             if (categoryname != 0 && newscategoryname != 0 && pagenumber>0)
             {
                
-                var countall = dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname && q.Subcategory.Id == categoryname && q.NewsType == newstype)).Count();
+                var countall = dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname && q.Subcategory.Id == categoryname && q.NewsType == newstype && q.IsActive && q.PublishDate<=DateTime.Now)).Count();
                 if (newsofallpages > countall)
                 {
 
-                    return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname && q.Subcategory.Id == categoryname && q.NewsType == newstype)).OrderBy(q => q.Id).Take(count).ToList();
+                    return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname && q.Subcategory.Id == categoryname && q.NewsType == newstype && q.IsActive && q.PublishDate <= DateTime.Now)).OrderBy(q => q.Id).Take(count).ToList();
 
                    
                 }
                 else
                 {
-                    return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname && q.Subcategory.Id == categoryname && q.NewsType == newstype)).OrderByDescending(q => q.Id).Take(newsofallpages).Skip(skipnews).ToList();
+                    return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname && q.Subcategory.Id == categoryname && q.NewsType == newstype && q.IsActive && q.PublishDate <= DateTime.Now)).OrderByDescending(q => q.Id).Take(newsofallpages).Skip(skipnews).ToList();
 
                 }
                
@@ -63,7 +63,7 @@ namespace Repository.Repository
             }
             else
             {
-                return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname || q.Subcategory.CategoryId == categoryname)).Where(q=>q.NewsType == newstype).OrderByDescending(q => q.Id).Take(newsofallpages).Skip(skipnews).ToList();
+                return dbSet.Where((q => q.NewsSubCategory.NewsCategory.Id == newscategoryname || q.Subcategory.CategoryId == categoryname)).Where(q=>q.NewsType == newstype && q.IsActive && q.PublishDate <= DateTime.Now).OrderByDescending(q => q.Id).Take(newsofallpages).Skip(skipnews).ToList();
 
             }
 

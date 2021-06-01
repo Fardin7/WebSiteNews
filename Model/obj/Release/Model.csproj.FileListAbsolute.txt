@@ -16,3 +16,22 @@ D:\Project_backup\New folder\WebSiteNews\Model\obj\Release\Model.csprojAssemblyR
 D:\Project_backup\New folder\WebSiteNews\Model\obj\Release\Model.csproj.CopyComplete
 D:\Project_backup\New folder\WebSiteNews\Model\obj\Release\Model.dll
 D:\Project_backup\New folder\WebSiteNews\Model\obj\Release\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Model.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Model.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\EntityFramework.SqlServer.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Resource.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Resource.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\EntityFramework.SqlServer.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\fa\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Release\fa-IR\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Release\Model.csprojAssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Release\Model.csproj.CopyComplete
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Release\Model.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Release\Model.pdb

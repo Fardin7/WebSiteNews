@@ -35,7 +35,7 @@ $(function () {
         var controllername = $(this).attr('controller-name');
         var dataid = $(this).attr("data-id");
         var dataname = $(this).attr("data-name");
-        var TeamDetailPostBackURL = '/' + controllername + '/Create';
+        var TeamDetailPostBackURL = '/' + controllername + '/CreatePartial';
         var options = { "backdrop": "static", keyboard: true };
         $.ajax({
             type: "GET",
@@ -202,7 +202,7 @@ $("#submiteditform").click(function () {
     formdata.Description = $("#Description").val();
     formdata.Body = $('.textarea').val();
     formdata.KeyWord = $("#tags").val();
-    formdata.PublishDate = null;
+    formdata.PublishDate = $('#filter-date').val();
     //$('#filter-date').datetimepicker('getValue');
     formdata.IsActive = $("#IsActive").is(':checked');
     formdata.ImageAddress = $("#newsimage").attr("src");

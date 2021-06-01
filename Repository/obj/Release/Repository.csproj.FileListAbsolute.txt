@@ -19,3 +19,28 @@ D:\Project_backup\New folder\WebSiteNews\Repository\obj\Release\Repository.cspro
 D:\Project_backup\New folder\WebSiteNews\Repository\obj\Release\Repository.csproj.CopyComplete
 D:\Project_backup\New folder\WebSiteNews\Repository\obj\Release\Repository.dll
 D:\Project_backup\New folder\WebSiteNews\Repository\obj\Release\Repository.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Repository.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Repository.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Repository.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\DAL.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\EntityFramework.SqlServer.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Model.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Resource.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\DAL.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\DAL.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Model.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\EntityFramework.SqlServer.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Resource.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\fa\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\bin\Release\fa-IR\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\obj\Release\Repository.csprojAssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\obj\Release\Repository.csproj.CopyComplete
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\obj\Release\Repository.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Repository\obj\Release\Repository.pdb

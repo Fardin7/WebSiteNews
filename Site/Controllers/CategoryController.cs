@@ -36,12 +36,12 @@ namespace Site.Controllers
 
         public ActionResult LastNewsOfCategory(int newscount, int newstype)
         {
-            var query = _categoryService.LastNewsOfCategory(newstype);
+            var query = _categoryService.LastNewsOfCategory(newstype).ToList();
             var model = (from news in query
                          select new NewsOfCategory
                          {
                              Title = news.Key,
-                             News = news.Take(newscount)
+                             News = news.OrderByDescending(a=>a.PublishDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(newscount)
                          }).ToList();
 
 

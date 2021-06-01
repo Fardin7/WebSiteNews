@@ -1,7 +1,8 @@
 ﻿@model List<Model.News>
 @{
 
-    var urltype = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType), Thread.CurrentThread.CurrentUICulture);
+    var urltype = Model[0].NewsType;
+    //CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), Model[0].NewsType), Thread.CurrentThread.CurrentUICulture);
 }
 @if (Model.Count >= 2)
 {

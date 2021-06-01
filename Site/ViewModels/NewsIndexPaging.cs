@@ -23,7 +23,7 @@ namespace Site
         public string   SubCategoryTitle { get; set; }
 
         public string NewsCategoryTitle { get; set; }
-        public DateTime PublishDate { get; set; }
+        public DateTime? PublishDate { get; set; }
 
 
 

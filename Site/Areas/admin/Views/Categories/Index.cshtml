@@ -3,13 +3,14 @@
 @{
     ViewBag.Title = "Index";
 }
-
-<h2>Index</h2>
+@section scripts{
+    <script src="~/Scripts/CustomJs/Categories.js"></script>
+    }
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="categorytable">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Title)
@@ -23,7 +24,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in  Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Title)
@@ -32,12 +33,14 @@
             @Html.DisplayFor(modelItem => item.IsActive)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ImageAddress)
+            <img src="@item.ImageAddress" style="width:210px;height:160px;" alt="" />
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+           @* @Html.ActionLink("Details", "Details", new { id = item.Id }) |*@
+            <button onclick='deletecategory(@item.Id)' >حذف</button>
+            
+
         </td>
     </tr>
 }

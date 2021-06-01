@@ -8,3 +8,12 @@ D:\Project_backup\New folder\WebSiteNews\Enum\bin\Debug\Enum.pdb
 D:\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enums.csprojAssemblyReference.cache
 D:\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enum.dll
 D:\Project_backup\New folder\WebSiteNews\Enum\obj\Debug\Enum.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\bin\Debug\Enum.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\bin\Debug\Enum.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\obj\Debug\Enums.csprojAssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\obj\Debug\Enum.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\obj\Debug\Enum.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\bin\Debug\Resource.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\bin\Debug\Resource.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\obj\Debug\Enums.csproj.CopyComplete
+D:\Projectbackup\Newfolder\WebSiteNews\Enum\bin\Debug\fa-IR\Resource.resources.dll

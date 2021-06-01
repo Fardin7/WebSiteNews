@@ -12,7 +12,7 @@
                     @{ var newstype = Resource.Resource.News;
                            }
 
-                    @Html.RouteLink(item.News.FirstOrDefault().Title, "news", new { type = newstype, id = item.News.SingleOrDefault().Title, newscattegory = item.News.SingleOrDefault().NewsSubCategory.NewsCategory.Title, cattegory = item.Title })
+                    @Html.RouteLink(item.News.FirstOrDefault().Title, "news", new { type = item.News.SingleOrDefault().NewsType, id = item.News.SingleOrDefault().Title, newscattegory = item.News.SingleOrDefault().NewsSubCategory.NewsCategory.Title, cattegory = item.Title })
 
                 </h4>
             </div>

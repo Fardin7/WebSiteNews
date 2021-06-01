@@ -12,7 +12,7 @@
             @foreach (var item in Model)
             {
                 var newstype = Resource.Resource.News;
-                var alink = Url.RouteUrl("newsofcategory", new { type = newstype, categoryname = item.Title });
+                var alink = Url.RouteUrl("newsofcategory", new { type = (int)NewsType.News, categoryname = item.Title });
 
                 <a href="@alink">
                     <div class="weekly2-single">

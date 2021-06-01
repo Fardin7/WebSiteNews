@@ -123,7 +123,7 @@
                                             @Html.DropDownList("CategoryId", null, "---دسته بندی---", htmlAttributes: new { @class = "form-control", onchange = "selectsub(this,'SubcategoryId','SubcategoryCrt','CategoryId')", style = "border-radius:0px;" })
                                             @Html.ValidationMessageFor(model => model.Subcategory.CategoryId, "", new { @class = "text-danger" })
 
-                                            <button type="button" controller-name="Categories" dropdown-id="CategoryId" id="CategoryCrt" style="width:20%; " class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                           @* <button type="button" controller-name="Categories" dropdown-id="CategoryId" id="CategoryCrt" style="width:20%; " class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
 
                                         </div>
                                     </div>
@@ -135,7 +135,7 @@
 
                                             @*<select id="SubcategoryId" name="SubcategoryId"  class="form-control">
                                                 </select>*@
-                                            <button type="button" id="SubcategoryCrt" data-name="CategoryId" data-id="@Model.Subcategory.CategoryId" controller-name="Subcategories" dropdown-id="SubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                           @* <button type="button" id="SubcategoryCrt" data-name="CategoryId" data-id="@Model.Subcategory.CategoryId" controller-name="Subcategories" dropdown-id="SubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
 
                                             @Html.ValidationMessageFor(model => model.SubcategoryId, "", new { @class = "text-danger" })
 
@@ -149,7 +149,7 @@
 
                                             @Html.DropDownList("NewsCategoryId", null, "---نوع خبر---", htmlAttributes: new { @class = "form-control", onchange = "selectsub(this,'NewsSubcategoryId','NewsSubcategoryCrt','NewsCategoryId')" })
                                             @Html.ValidationMessageFor(model => model.NewsSubCategory.NewsCategoryId, "", new { @class = "text-danger" })
-                                            <button type="button" id="NewsCategoryCrt" controller-name="NewsCategories" dropdown-id="NewsCategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                           @* <button type="button" id="NewsCategoryCrt" controller-name="NewsCategories" dropdown-id="NewsCategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
                                         </div>
                                     </div>
                                     @*data-id="@Model.NewsSubcategoryId"*@
@@ -162,7 +162,7 @@
 
                                             @*<select id="NewsSubcategoryId" name="NewsSubcategoryId" class="form-control">
                                                 </select>*@
-                                            <button type="button" data-name="NewsCategoryId" data-id="@Model.NewsSubCategory.NewsCategoryId" id="NewsSubcategoryCrt" controller-name="NewsSubCategories" dropdown-id="NewsSubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                           @* <button type="button" data-name="NewsCategoryId" data-id="@Model.NewsSubCategory.NewsCategoryId" id="NewsSubcategoryCrt" controller-name="NewsSubCategories" dropdown-id="NewsSubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
 
                                             @Html.ValidationMessageFor(model => model.NewsSubcategoryId, "", new { @class = "text-danger" })
 

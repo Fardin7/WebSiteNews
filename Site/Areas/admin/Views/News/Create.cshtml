@@ -112,7 +112,7 @@
                                         @Html.DropDownList("CategoryId", null, "---دسته بندی---", htmlAttributes: new { @class = "form-control", onchange = "selectsub(this,'SubcategoryId','SubcategoryCrt','CategoryId')", style = "border-radius:0px;" })
                                         @Html.ValidationMessageFor(model => model.Subcategory.CategoryId, "", new { @class = "text-danger" })
 
-                                        <button type="button" controller-name="Categories" dropdown-id="CategoryId" id="CategoryCrt" style="width:20%; " class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                        @*<button type="button" controller-name="Categories" dropdown-id="CategoryId" id="CategoryCrt" style="width:20%; " class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
 
                                     </div>
                                 </div>
@@ -124,7 +124,7 @@
 
                                         <select id="SubcategoryId" name="SubcategoryId" hidden class="form-control">
                                         </select>
-                                        <button type="button" id="SubcategoryCrt" controller-name="Subcategories" hidden dropdown-id="SubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                       @* <button type="button" id="SubcategoryCrt" controller-name="Subcategories" hidden dropdown-id="SubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
 
                                         @Html.ValidationMessageFor(model => model.SubcategoryId, "", new { @class = "text-danger", id = "Subcategoryvld" })
 
@@ -138,7 +138,7 @@
 
                                         @Html.DropDownList("NewsCategoryId", null, "---نوع خبر---", htmlAttributes: new { @class = "form-control", onchange = "selectsub(this,'NewsSubcategoryId','NewsSubcategoryCrt','NewsCategoryId')" })
                                         @Html.ValidationMessageFor(model => model.NewsSubCategory.NewsCategoryId, "", new { @class = "text-danger" })
-                                        <button type="button" id="NewsCategoryCrt" controller-name="NewsCategories" dropdown-id="NewsCategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                       @* <button type="button" id="NewsCategoryCrt" controller-name="NewsCategories" dropdown-id="NewsCategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
                                     </div>
                                 </div>
                             </div>
@@ -148,7 +148,7 @@
                                     <div class="input-group-prepend">
                                         <select id="NewsSubcategoryId" name="NewsSubcategoryId" hidden class="form-control">
                                         </select>
-                                        <button type="button" id="NewsSubcategoryCrt" controller-name="NewsSubCategories" hidden dropdown-id="NewsSubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>
+                                       @* <button type="button" id="NewsSubcategoryCrt" controller-name="NewsSubCategories" hidden dropdown-id="NewsSubcategoryId" style="width:20%;" class="btn btn-block bg-gradient-primary btn-flat">ایجاد</button>*@
 
                                         @Html.ValidationMessageFor(model => model.NewsSubcategoryId, "", new { @class = "text-danger", id = "NewsSubcategoryvld" })
 
@@ -166,6 +166,7 @@
             </div>
         </div>*@
                             <div class="form-group">
+                                <h4>فایل </h4>
                                 <div class="col-md-offset-2 col-md-10">
                                     <img id="waitinggifid" style="width:20px;height:20px; visibility:hidden" src="~/PanelFile/gifs/Waiting-GIF-Image-for-Whatsapp-and-Facebook-23-1.gif" />
                                     <input name="NewsFile" type="file" id="selectfile" onchange="uploadfile(this,'waitinggifid','/admin/News/SaveNewFile')" />
@@ -173,9 +174,10 @@
                             </div>
 
                             <div class="form-group">
+                                <h4>تصویر </h4>
                                 <div class="col-md-offset-2 col-md-10">
                                     <img id="newswaitinggifid" style="width:20px;height:20px; visibility:hidden" src="~/PanelFile/gifs/Waiting-GIF-Image-for-Whatsapp-and-Facebook-23-1.gif" />
-                                    <input name="NewsImage" type="file" id="selectfile" onchange="uploadfile(this,'newswaitinggifid','/admin/News/SaveNewImage')"  />
+                                    <input name="NewsImage" type="file" id="selectfile" onchange="uploadfile(this,'newswaitinggifid','/admin/News/SaveNewImage')" />
                                 </div>
                             </div>
 

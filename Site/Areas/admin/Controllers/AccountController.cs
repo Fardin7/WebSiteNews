@@ -22,6 +22,8 @@ namespace Site.Area.admin.Controllers
 
         public AccountController()
         {
+
+
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager)

@@ -53,7 +53,7 @@ namespace Site.Controllers
                          select new NewsOfNewsCategory
                          {
                              Title = news.Key,
-                             News = news.Take(newscount).ToList()
+                             News = news.OrderByDescending(a => a.PublishDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(newscount).ToList()
                          }).ToList();
 
 
@@ -70,7 +70,7 @@ namespace Site.Controllers
                          select new NewsOfNewsCategory
                          {
                              Title = news.Key,
-                             News = news.Take(newscount).ToList()
+                             News = news.OrderByDescending(a => a.PublishDate).Where(q=>q.PublishDate<=DateTime.Now && q.IsActive).Take(newscount).ToList()
                          }).ToList();
 
             
@@ -91,7 +91,7 @@ namespace Site.Controllers
                          select new NewsOfNewsCategory
                          {
 
-                             News = news.OrderByDescending(q => q.PublishDate).Take(takenews).Skip(skipnews).ToList(),
+                             News = news.OrderByDescending(q => q.PublishDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(takenews).Skip(skipnews).ToList(),
 
                          }).ToList().FirstOrDefault();
 
@@ -104,7 +104,7 @@ namespace Site.Controllers
                     Title = model.News[i].Title,
                     ImageAddress = model.News[i].ImageAddress,
                     Description = model.News[i].Description,
-                    Url = Url.RouteUrl("news", new { type = urltype, cattegory = model.News[i].Subcategory.Title, newscattegory = model.News[i].NewsSubCategory.NewsCategory.Title, id = model.News[i].Title })
+                    Url = Url.RouteUrl("news", new { type = type, cattegory = model.News[i].Subcategory.Title, newscattegory = model.News[i].NewsSubCategory.NewsCategory.Title, id = model.News[i].Title })
 
 
                 });
@@ -114,7 +114,7 @@ namespace Site.Controllers
 
         public ActionResult ViewPaging(int newstype, int newscategory)
         {
-            var count = _newsService.Get(q => q.NewsType == newstype && q.NewsSubCategory.NewsCategoryId == newscategory).Count();
+            var count = _newsService.Get(q => q.NewsType == newstype && q.NewsSubCategory.NewsCategoryId == newscategory && q.PublishDate <= DateTime.Now && q.IsActive).Count();
 
             return Json(new { pages = Math.Ceiling((double)count / 4), newstype = newstype, newscategory = newscategory });
 

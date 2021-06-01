@@ -47,10 +47,13 @@ namespace Site.Controllers
             filterContext.ExceptionHandled = true;
             var action = filterContext.RequestContext.RouteData.Values["action"];
             var controller = filterContext.RequestContext.RouteData.Values["controller"];
-            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr3777.txt"), ex + "  " + action + "  " + controller);
-
             Logger.Error(string.Format("{0} Error in {1} action and {2} controller , Error Code is {3}", message, action, controller, statuscode), ex);
-            Response.Redirect("/Home/Error");
+            // Response.Redirect("/Home/Error");
+            filterContext.Result = new ViewResult()
+            {
+                ViewName = "Error",
+
+            };
         }
     }
 }

@@ -40,3 +40,21 @@ D:\Project_backup\New folder\WebSiteNews\Model\obj\Debug\Model.csprojAssemblyRef
 D:\Project_backup\New folder\WebSiteNews\Model\obj\Debug\Model.csproj.CopyComplete
 D:\Project_backup\New folder\WebSiteNews\Model\obj\Debug\Model.dll
 D:\Project_backup\New folder\WebSiteNews\Model\obj\Debug\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Model.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Model.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\EntityFramework.SqlServer.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Resource.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Resource.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\EntityFramework.SqlServer.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Debug\Model.csproj.CopyComplete
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Debug\Model.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Model\obj\Debug\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Model\bin\Debug\fa-IR\Resource.resources.dll

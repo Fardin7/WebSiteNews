@@ -22,7 +22,8 @@
                                 <nav>
                                     <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                         @{ /**/
-                                        int j = 0; var activeshow = "active";}
+                                                        /**/
+                                                        int j = 0; var activeshow = "active";}
                                         @foreach (var item in Model)
                                         {
                                             var newstype = item.News[0].NewsType;
@@ -47,7 +48,8 @@
                                 @{ int i = 0; var active = "active";}
                                 @foreach (var item in Model)
                                 {
-                                  var newstype=  CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.News[0].NewsType),Thread.CurrentThread.CurrentUICulture);
+                                    var newstype = item.News[0].NewsType;
+                                    //CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), item.News[0].NewsType), Thread.CurrentThread.CurrentUICulture);
                                     if (i == 1)
                                     {
                                         active = "";
@@ -146,6 +148,7 @@
 
 @section scripts{
 
-    <script src="~/Scripts/CustomJs/DropDownList.js"></script>
-    <script src="~/Scripts/CustomJs/Paging.js"></script>
+
+    @Scripts.Render("~/bundles/Paging")
+    @Scripts.Render("~/bundles/customdropdownjs")
 }

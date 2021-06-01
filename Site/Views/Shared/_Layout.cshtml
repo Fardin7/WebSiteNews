@@ -8,22 +8,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="~/WebSiteContent/assets/img/favicon.ico">
-
-    <!-- CSS here -->
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/bootstrap.min.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/owl.carousel.min.css">
-    @*<link rel="stylesheet" href="WebSiteContent/assets/css/ticker-style.css">*@
-    <link rel="stylesheet" href="WebSiteContent/assets/css/flaticon.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/slicknav.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/animate.min.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/magnific-popup.css">
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/fontawesome-all.min.css">
     <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/themify-icons.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/slick.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets//css/rtl/nice-select.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/style.css">
-    <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/ticker-style.css">
-    @*@Styles.Render("")*@
+    <!-- CSS here -->
+    @*<link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/bootstrap.min.css">
+        <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/owl.carousel.min.css">*@
+
+    @*<link rel="stylesheet" href="WebSiteContent/assets/css/flaticon.css">
+            <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/slicknav.css">
+            <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/animate.min.css">
+            <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/magnific-popup.css">
+
+
+        <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/slick.css">
+        <link rel="stylesheet" href="~/WebSiteContent/assets//css/rtl/nice-select.css">
+        <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/style.css">
+        <link rel="stylesheet" href="~/WebSiteContent/assets/css/rtl/ticker-style.css">*@
+    @Styles.Render("~/bundles/sitecssfiles")
     @RenderSection("css", required: false)
 </head>
 
@@ -35,7 +36,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="~/WebSiteContent/assets/img/logo/logo.png" alt="">
+                    <img style="width:185px;height:62px;" src="~/WebSiteContent/assets/img/logo/logo.png" alt="">
                 </div>
             </div>
         </div>
@@ -53,12 +54,12 @@
                             <div class="row d-flex justify-content-between align-items-center">
                                 <div class="header-info-left">
                                     <ul>
-                                        <li>
+                                        @*<li>
                                             <img src="~/WebSiteContent/assets/img/icon/header_icon1.png" alt="">34ºc, آفتابی
                                         </li>
                                         <li>
                                             <img src="~/WebSiteContent/assets/img/icon/header_icon1.png" alt="">شنبه ، 25 مرداد ، 1399
-                                        </li>
+                                        </li>*@
                                         <li>
                                             @if (User.Identity.IsAuthenticated)
                                             {
@@ -91,7 +92,7 @@
                             <div class="col-xl-3 col-lg-3 col-md-3">
                                 <div class="logo">
                                     <a href="/">
-                                        <img src="~/WebSiteContent/assets/img/logo/logo.png" alt="">
+                                        <img style="width:185px;height:62px;" src="~/WebSiteContent/assets/img/logo/logo.png" alt="">
                                     </a>
                                 </div>
                             </div>
@@ -184,7 +185,11 @@
                                 </div>
                                 <div class="footer-tittle">
                                     <div class="footer-pera">
-                                        <p>Suscipit mauris pede for con sectetuer sodales adipisci for cursus fames lectus tempor da blandit gravida sodales  Suscipit mauris pede for con sectetuer sodales adipisci for cursus fames lectus tempor da blandit gravida sodales  Suscipit mauris pede for sectetuer.</p>
+                                        <p>
+                                            درباره ما
+                                            وب سایت داهاتو، تریبونی است برای تمامی کسانی که به همزیستی مسالمت‌آمیز و بدون تبعیض ملیت‌های ساکن در جغرافیای ایران کنونی باور دارند.
+                                            داهاتو یک وب‌سایت مستقل است که به هیچ حزب، گروه و شخص خاصی وابستگی ندارد.
+                                        </p>                                  
                                     </div>
                                 </div>
                                 <!-- social -->
@@ -198,7 +203,7 @@
                     </div>
                     @Html.Action("Create", "NewsLetter", new { partialname = "_FooterNewsLetter" })
 
-                    <div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
+                    @*<div class="col-xl-3 col-lg-3 col-md-5 col-sm-6">
                         <div class="single-footer-caption mb-50 mt-60">
                             <div class="footer-tittle">
                                 <h4>Instagram Feed</h4>
@@ -214,7 +219,7 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
@@ -228,7 +233,7 @@
                                 <p>
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                     Copyright &copy;
-                                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="ti-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+                                    <script>document.write(new Date().getFullYear());</script> تمامی قوانین مادی و معنوی این سایت مربوط به سایت   <a href="https://dahatou.com/" target="_blank">داهاتو</a> است،استفاده از مطالب با ذکر منبع مجازاست.
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>
@@ -236,9 +241,9 @@
                         <div class="col-lg-6">
                             <div class="footer-menu f-right">
                                 <ul>
-                                    <li><a href="#">Terms of use</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">اخبار</a></li>
+                                    <li><a href="#">درباره ما</a></li>
+                                    <li><a href="#">ارتباط با ما</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -248,49 +253,10 @@
         </div>
         <!-- Footer End-->
     </footer>
-    <!-- All JS Custom Plugins Link Here here -->
-    <!-- All JS Custom Plugins Link Here here -->
-    <script src="~/WebSiteContent/assets/js/vendor/modernizr-3.5.0.min.js"></script>
-    <!-- Jquery, Popper, Bootstrap -->
-    <script src="~/WebSiteContent/assets/js/vendor/jquery-1.12.4.min.js"></script>
-    <script src="~/WebSiteContent/assets/js/popper.min.js"></script>
-    <script src="~/WebSiteContent/assets/js/bootstrap.min.js"></script>
-    <!-- Jquery Mobile Menu -->
-    <script src="~/WebSiteContent/assets/js/jquery.slicknav.min.js"></script>
-
-    <!-- Jquery Slick , Owl-Carousel Plugins -->
-    <script src="~/WebSiteContent/assets/js/owl.carousel.min.js"></script>
-    <script src="~/WebSiteContent/assets/js/slick.min.js"></script>
-    <!-- Date Picker -->
-    <script src="~/WebSiteContent/assets/js/gijgo.min.js"></script>
-    <!-- One Page, Animated-HeadLin -->
-    <script src="~/WebSiteContent/assets/js/wow.min.js"></script>
-    <script src="~/WebSiteContent/assets/js/animated.headline.js"></script>
-    <script src="~/WebSiteContent/assets/js/jquery.magnific-popup.js"></script>
-
-    <!-- Breaking New Pluging -->
-    <script src="~/WebSiteContent/assets/js/jquery.ticker.js"></script>
-    <script src="~/WebSiteContent/assets/js/site.js"></script>
-
-    <!-- Scrollup, nice-select, sticky -->
-    <script src="~/WebSiteContent/assets/js/jquery.scrollUp.min.js"></script>
-    <script src="~/WebSiteContent/assets/js/jquery.nice-select.min.js"></script>
-    <script src="~/WebSiteContent/assets/js/jquery.sticky.js"></script>
-
-    <!-- contact js -->
-    <script src="~/WebSiteContent/assets/js/contact.js"></script>
-    <script src="~/WebSiteContent/assets/js/jquery.form.js"></script>
-    <script src="~/WebSiteContent/assets/js/jquery.validate.min.js"></script>
-    <script src="~/WebSiteContent/assets/js/mail-script.js"></script>
-    <script src="~/WebSiteContent/assets/js/jquery.ajaxchimp.min.js"></script>
-
-    <!-- Jquery Plugins, main Jquery -->
-    <script src="~/WebSiteContent/assets/js/plugins.js"></script>
-    <script src="~/WebSiteContent/assets/js/main.js"></script>
-
-
-    @*@Scripts.Render("~/bundles/jquery")
-        @Scripts.Render("~/bundles/bootstrap")*@
+   
+   
+    @Scripts.Render("~/bundles/sitescriptfiles")
+       
     @RenderSection("scripts", required: false)
 </body>
 </html>

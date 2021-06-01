@@ -38,11 +38,10 @@ namespace Site.Controllers
             _newsFileService = newsFileService;
         }
         // GET: user/News
-        public ActionResult Index(int type, string categoryname, string newscategoryname)
+        public  ActionResult Index(int type, string categoryname, string newscategoryname)
         {
-            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr8888.txt"), type + "  " + categoryname + "  " + newscategoryname);
-
-
+            
+           
             var newscategoryid = 0;
             var categoryid = 0;
             if (newscategoryname!=null)
@@ -61,7 +60,7 @@ namespace Site.Controllers
                 //(int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
 
             var model = _newsService.ListNewsOfNewsCategoryAndCategory(newstype, categoryname, newscategoryname, 4);
-            double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname).Where(q => q.NewsType == newstype).Count();
+            double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname).Where(q => q.NewsType == newstype && q.IsActive && q.PublishDate <= DateTime.Now).Count();
             pagecount = Math.Ceiling(pagecount / 4);
             var newslist = new List<NewsIndexPaging>();
             foreach (var item in model)
@@ -92,7 +91,7 @@ namespace Site.Controllers
 
 
             var model = _newsService.ListNewsOfNewsCategoryAndCategory(type, categoryname, newscategoryname, count);
-            double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname && q.Subcategory.Title == categoryname && q.NewsType == type).Count();
+            double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname && q.Subcategory.Title == categoryname && q.NewsType == type && q.IsActive && q.PublishDate<=DateTime.Now).Count();
             pagecount = Math.Ceiling((double)pagecount / count);
 
             ViewBag.pagecount = pagecount;
@@ -110,7 +109,7 @@ namespace Site.Controllers
           
                     Description = item.Description,
                     ImageAddress = item.ImageAddress,
-                    PublishDate = item.PublishDate.Value,
+                    PublishDate = item.PublishDate,
                     NewsCategoryTitle = item.NewsSubCategory.NewsCategory.Title,
                     SubCategoryTitle = item.Subcategory.Title,
                     PageNumber = 3,
@@ -128,7 +127,7 @@ namespace Site.Controllers
         // GET: user/News/Details/5
         public ActionResult Details(string id, int type)
         {
-            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr10.txt"), id);
+            
             var typeint = type;
                 //(int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
             return View(_newsService.GetByTitleAndType(id, typeint));
@@ -137,14 +136,14 @@ namespace Site.Controllers
         public ActionResult LastNews(int newscount, int newstype, string partialname)
         {
 
-            var model = _service.Get(q => q.NewsType == newstype).OrderByDescending(q => q.PublishDate).Take(newscount).ToList();
+            var model = _service.Get(q => q.NewsType == newstype).OrderByDescending(q => q.PublishDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(newscount).ToList();
 
             return PartialView(partialname, model);
         }
 
         public ActionResult NewsPagingView(int newstype)
         {
-            var count = _service.Get(q => q.NewsType == newstype).Count();
+            var count = _service.Get(q => q.NewsType == newstype).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Count();
 
             return PartialView("_newspaging", Math.Ceiling((double)count / 4));
         }
@@ -153,7 +152,7 @@ namespace Site.Controllers
         {
             var newstypename = CultureHelper.EnumLocalize(Enum.GetName(typeof(NewsType), newstype), Thread.CurrentThread.CurrentUICulture);
 
-            var model = _service.Get(q => q.NewsType == newstype).OrderByDescending(q => q.PublishDate).Take(newscount * pagenumber).Skip(newscount * (pagenumber - 1)).ToList();
+            var model = _service.Get(q => q.NewsType == newstype).OrderByDescending(q => q.PublishDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(newscount * pagenumber).Skip(newscount * (pagenumber - 1)).ToList();
             var list = new List<LastNews>();
             foreach (var item in model)
             {
@@ -173,11 +172,11 @@ namespace Site.Controllers
 
         public ActionResult TrendingNews(int count)
         {
-            return  PartialView("_TrendNews", _service.Get(q => q.IsTrend == true).OrderByDescending(q => q.TrendingDate).Take(count).ToList());
+            return  PartialView("_TrendNews", _service.Get(q => q.IsTrend == true).OrderByDescending(q => q.TrendingDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(count).ToList());
         }
         public ActionResult BannerNews()
         {
-            return PartialView("_BannerNews", _service.Get(q => q.IsBanner == true).FirstOrDefault());
+            return PartialView("_BannerNews", _service.Get(q => q.IsBanner == true).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).FirstOrDefault());
         }
     }
 }

@@ -159,11 +159,16 @@
                     <div class="col-lg-6">
                         <div class="video-caption">
                             <div class="top-caption">
-                                <span class="color1">Politics</span>
+                                <span class="color1">درباره ما</span>
                             </div>
                             <div class="bottom-caption">
-                                <h2>Welcome To The Best Model Winner Contest At Look of the year</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit. Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod ipsum dolor sit lorem ipsum dolor sit.</p>
+                                <h2>سایت داهاتو چه اهدافی را دنبال میکند؟</h2>
+                                <p>                       
+                                    ایران یک کشور کثیرالمله است، ساکنان کنونی این سرزمین به بیش از هفت زبان مختلف تکلم می‌کنند و مردمانی با ادیان مختلفی در این جغرافیا زندگی می‌کنند، اما تنها یک زبان و یک مذهب در این کشور حاکم است، زبان فارسی و مذهب شیعه.
+                                    داهاتو صدای عرب‌ها، کردها، بلوچ‌ها، آذری‌ها، گیلک‌ها، لرها، ترکمن‌ها و سایر ملت‌های دیگری است که در ایران از آموزش به زبان مادری و حتی آموزش زبان مادری محروم هستند. داهاتو رسانه‌ای است برای زرتشتی‌ها، یهودیان، مسیحی‌ها، اهل تسن، بهائیان، پیروان اهل حق، مندائیان و پیروان تمام مذاهبی که در ایران به حاشیه رانده شده‌اند.
+                                    وب سایت داهاتو، تریبونی است برای تمامی کسانی که به همزیستی مسالمت‌آمیز و بدون تبعیض ملیت‌های ساکن در جغرافیای ایران کنونی باور دارند.
+                                    داهاتو یک وب‌سایت مستقل است که به هیچ حزب، گروه و شخص خاصی وابستگی ندارد.
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -226,8 +231,9 @@
 </main>
 @section scripts{
 
-    <script src="~/Scripts/CustomJs/Paging.js"></script>
-    <script src="~/Scripts/CustomJs/DropDownList.js"></script>
+    @Scripts.Render("~/bundles/Paging")
+  
+    @Scripts.Render("~/bundles/customdropdownjs")
     <script src="~/WebSiteContent/assets/js/jquery.ticker-rtl.js"></script>
 
 }

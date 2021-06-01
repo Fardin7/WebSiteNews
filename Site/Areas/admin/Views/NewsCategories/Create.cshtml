@@ -1,6 +1,12 @@
 ﻿@model Model.NewsCategory
 
-@using (Html.BeginForm("Create", "NewsCategories", FormMethod.Post, new { id = "NewsCategoriesfrm" }))
+
+@section scripts{
+
+    <script src="~/Scripts/CustomJs/NewsCategory.js"></script>
+}
+
+@using (Html.BeginForm("Create", "NewsCategories", FormMethod.Post, new { id = "NewsCategoryfrm" }))
 {
     @*@Html.AntiForgeryToken()*@
 
@@ -24,6 +30,25 @@
                 </div>
             </div>
         </div>
-
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="button" id="NewsCategorysubmitbtn" value="Create" class="btn btn-default" />
+            </div>
+        </div>
     </div>
 }
+<table class="table" id="NewsCategorytable">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </th>      
+        <th></th>
+    </tr>
+
+
+
+
+</table>

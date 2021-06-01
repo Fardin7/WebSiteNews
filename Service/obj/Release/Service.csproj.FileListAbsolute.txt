@@ -19,3 +19,28 @@ D:\Project_backup\New folder\WebSiteNews\Service\obj\Release\Service.csprojAssem
 D:\Project_backup\New folder\WebSiteNews\Service\obj\Release\Service.csproj.CopyComplete
 D:\Project_backup\New folder\WebSiteNews\Service\obj\Release\Service.dll
 D:\Project_backup\New folder\WebSiteNews\Service\obj\Release\Service.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Service.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Service.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\DAL.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Model.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Repository.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\EntityFramework.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Resource.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\DAL.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\DAL.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Model.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Model.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Repository.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Repository.dll.config
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\EntityFramework.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Resource.pdb
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\fa\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Release\fa-IR\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Release\Service.csprojAssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Release\Service.csproj.CopyComplete
+D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Release\Service.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Release\Service.pdb

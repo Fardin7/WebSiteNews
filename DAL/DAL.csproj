@@ -167,6 +167,30 @@
     <Compile Include="Migrations\202008051520390_addcontactmodel.designer.cs">
       <DependentUpon>202008051520390_addcontactmodel.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009140851317_add trending and branding filed to news model.cs" />
+    <Compile Include="Migrations\202009140851317_add trending and branding filed to news model.designer.cs">
+      <DependentUpon>202009140851317_add trending and branding filed to news model.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009141138103_add trending date.cs" />
+    <Compile Include="Migrations\202009141138103_add trending date.designer.cs">
+      <DependentUpon>202009141138103_add trending date.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009161439082_make trendingnews Date Nullable.cs" />
+    <Compile Include="Migrations\202009161439082_make trendingnews Date Nullable.designer.cs">
+      <DependentUpon>202009161439082_make trendingnews Date Nullable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010040332274_kjkj.cs" />
+    <Compile Include="Migrations\202010040332274_kjkj.designer.cs">
+      <DependentUpon>202010040332274_kjkj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010040348525_sadfasdfsa.cs" />
+    <Compile Include="Migrations\202010040348525_sadfasdfsa.designer.cs">
+      <DependentUpon>202010040348525_sadfasdfsa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010040427229_kjdsnksd.cs" />
+    <Compile Include="Migrations\202010040427229_kjdsnksd.designer.cs">
+      <DependentUpon>202010040427229_kjdsnksd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitOfWork.cs" />
@@ -205,6 +229,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003011756004_kjhk.resx">
       <DependentUpon>202003011756004_kjhk.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202003102255136_addFILETABLE.resx">
       <DependentUpon>202003102255136_addFILETABLE.cs</DependentUpon>
@@ -229,6 +254,25 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202008051520390_addcontactmodel.resx">
       <DependentUpon>202008051520390_addcontactmodel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009140851317_add trending and branding filed to news model.resx">
+      <DependentUpon>202009140851317_add trending and branding filed to news model.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009141138103_add trending date.resx">
+      <DependentUpon>202009141138103_add trending date.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009161439082_make trendingnews Date Nullable.resx">
+      <DependentUpon>202009161439082_make trendingnews Date Nullable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010040332274_kjkj.resx">
+      <DependentUpon>202010040332274_kjkj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010040348525_sadfasdfsa.resx">
+      <DependentUpon>202010040348525_sadfasdfsa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010040427229_kjdsnksd.resx">
+      <DependentUpon>202010040427229_kjdsnksd.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

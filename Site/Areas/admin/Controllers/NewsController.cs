@@ -50,9 +50,6 @@ namespace Site.Area.admin.Controllers
        
         public ActionResult Index()
         {
-
-            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr787.txt"), "interd home");
-
             var article = _service.Get(/*includeProperties: "Title"*/).ToList();
             return View(article);
         }
@@ -90,8 +87,6 @@ namespace Site.Area.admin.Controllers
             }
             catch (Exception ex)
             {
-                
-                System.IO.File.WriteAllText(Server.MapPath("~/Content/errr.txt"), ex.Message);
                 return View();
             }
            
@@ -203,7 +198,7 @@ namespace Site.Area.admin.Controllers
         public ActionResult Create([Bind(Include = "Id,Title,Description,Body,KeyWord,PublishDate,IsActive,ImageAddress,SubcategoryId,NewsType,NewsSubcategoryId")] News news)
         {
             HttpFileCollectionBase files = Request.Files;
-             if (news.PublishDate is null)
+             if (news.PublishDate==null)
             {
                 news.PublishDate = DateTime.Now;
             }
@@ -289,6 +284,10 @@ namespace Site.Area.admin.Controllers
 
             if (ModelState.IsValid)
             {
+                if (news.PublishDate == null)
+                {
+                    news.PublishDate = DateTime.Now;
+                }
                 news.ApplicationUserId = User.Identity.GetUserId();
                 if (TempData["NewsAddressImage"] != null)
                 {
