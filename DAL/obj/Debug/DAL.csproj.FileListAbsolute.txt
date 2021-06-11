@@ -117,7 +117,6 @@ D:\Project_backup\New folder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.kjn.resour
 D:\Project_backup\New folder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.createcomment.resources
 D:\Project_backup\New folder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.addfieldtonewsle.resources
 D:\Project_backup\New folder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.addcontactmodel.resources
-D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.createdb.resources
 D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.addnewtable.resources
 D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.addnewforeignkey.resources
@@ -174,3 +173,5 @@ D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.maketrending
 D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.kjkj.resources
 D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.sadfasdfsa.resources
 D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.Migrations.kjdsnksd.resources
+D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache

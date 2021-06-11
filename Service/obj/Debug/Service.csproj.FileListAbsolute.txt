@@ -78,10 +78,11 @@ D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Debug\Repository.dll.config
 D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
 D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Debug\EntityFramework.xml
 D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Debug\Microsoft.AspNet.Identity.Core.xml
-D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Debug\Service.csprojAssemblyReference.cache
 D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Debug\Service.csproj.CopyComplete
 D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Debug\Service.dll
 D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Debug\Service.pdb
 D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Debug\Resource.dll
 D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Debug\Resource.pdb
 D:\Projectbackup\Newfolder\WebSiteNews\Service\bin\Debug\fa-IR\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Debug\Service.csproj.AssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache

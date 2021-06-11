@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using Model;
 namespace Service.Interface
 {
-  public  interface ISubCategoryService:Iservice<Subcategory>
+    public interface ISubCategoryService : Iservice<Subcategory>
     {
-    
         Subcategory GetByTitle(string title);
     }
 }

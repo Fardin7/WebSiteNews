@@ -7,8 +7,7 @@ using Model;
 namespace Service.Interface
 {
   public  interface INewsSubCategoryService : Iservice<NewsSubCategory>
-    {
-    
+    { 
         NewsSubCategory GetByTitle(string title);
     }
 }

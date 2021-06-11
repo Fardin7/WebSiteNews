@@ -7,7 +7,7 @@ using DAL;
 using Model;
 namespace Repository.Inerface
 {
-  public  interface IContactRepository:IRepository<Contact>
+    public interface IContactRepository : IRepository<Contact>
     {
 
     }

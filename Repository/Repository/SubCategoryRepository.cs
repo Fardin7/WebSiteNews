@@ -14,14 +14,9 @@ namespace Repository.Repository
    public class SubCategoryRepository : GenericRepository<Subcategory>, ISubCategoryRepository
     {
         private DbContext _context;
-      // internal DbSet<Article> dbSet;
         public SubCategoryRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             this._context = unitOfWork.DBContext;
-
-           
-
-
         }
 
         public Subcategory GetByTitle(string title)

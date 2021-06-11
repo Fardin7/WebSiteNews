@@ -14,24 +14,16 @@ using System.Web.Routing;
 
 namespace Site.CustomAuthorization
 {
+
     class CustomAuthorize : AuthorizeAttribute
     {
-
-       // private readonly IArticleService _articleService;
-
         public CustomAuthorize()
         {
 
         }
-
-        //public CustomAuthorize(/*DbContext context*/IArticleService articleService)
-        //{
-        //    //  _dbContext = context;
-        //    _articleService = articleService;
-        //}
         protected override bool AuthorizeCore(HttpContextBase httpContext)
         {
-            
+
             var authorize = base.AuthorizeCore(httpContext);
             if (!authorize)
             {
@@ -53,13 +45,13 @@ namespace Site.CustomAuthorization
 
             var entity = (int)Enum.Parse(typeof(Entity), controller.ToLower());
             var function = (int)Enum.Parse(typeof(Action), action.ToLower());
-            if (allpermission.Count>0)
+            if (allpermission.Count > 0)
             {
                 foreach (var item in allpermission)
                 {
                     if (item.Acrion == function && item.Entity == entity)
                     {
-                        
+
                         authorize = true;
                         break;
                     }
@@ -73,7 +65,7 @@ namespace Site.CustomAuthorization
             {
                 authorize = false;
             }
-     
+
 
 
 
@@ -88,13 +80,13 @@ namespace Site.CustomAuthorization
                new RouteValueDictionary(
                    new
                    {
-                      // Area = "admin",
+                       // Area = "admin",
                        controller = "Account",
                        action = "Login",
-                       returnUrl="admin/"+ filterContext.RouteData.Values["controller"]+"/"+ filterContext.RouteData.Values["action"]
+                       returnUrl = "admin/" + filterContext.RouteData.Values["controller"] + "/" + filterContext.RouteData.Values["action"]
                    })
                );
-                //base.HandleUnauthorizedRequest(filterContext);
+                
             }
             else
             {
@@ -102,7 +94,7 @@ namespace Site.CustomAuthorization
                 new RouteValueDictionary(
                     new
                     {
-                        Area="admin",
+                        Area = "admin",
                         controller = "Account",
                         action = "Unauthorised"
                     })

@@ -14,27 +14,14 @@ namespace Repository.Repository
     public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
     {
         private DbContext _context;
-        // internal DbSet<Article> dbSet;
         public CategoryRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             this._context = unitOfWork.DBContext;
-
-
-
-
         }
 
         public Category GetByTitle(string title)
         {
             return _context.Set<Category>().Where(q => q.Title == title).FirstOrDefault();
-        }
-
-        public int GetCount()
-        {
-
-            var b = dbSet.Count();
-            return b;
-
         }
         public IQueryable<IGrouping<string, News>> LastNewsOfCategory(int newstype)
         {

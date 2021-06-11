@@ -12,11 +12,10 @@ namespace Site.Controllers
 {
     public class AboutUsController : BaseController
     {
-
         public ActionResult Index()
         {
             return View();
         }
-      
+
     }
 }

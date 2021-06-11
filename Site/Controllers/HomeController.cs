@@ -11,19 +11,9 @@ namespace Site.Controllers
 {
     public class HomeController : BaseController
     {
-        private readonly Iservice<News> _service;
-        private readonly INewsService _newsService;
-        private readonly IUnitOfWork _unitOfWork;
-        private readonly ICategoryService _categoryService;
-        private readonly ISubCategoryService _subCategoryService;
-        private readonly INewsCategoryService _newscategoryService;
-        private readonly INewsSubCategoryService _newssubCategoryService;
-        private readonly INewsFileService _newsFileService;
-        public HomeController(Iservice<News> service, INewsService newsService, IUnitOfWork unitOfWork, ICategoryService categoryService,
-         ISubCategoryService subCategoryService, INewsCategoryService newscategoryService, INewsSubCategoryService newsSubCategoryService
-           , INewsFileService newsFileService)
+        public HomeController()
         {
-            this._service = service;
+           
         }
         public ActionResult Index()
         {
@@ -38,10 +28,10 @@ namespace Site.Controllers
         }
         public ActionResult Error()
         {
-            
+
             return View();
         }
-        
+
 
     }
 }

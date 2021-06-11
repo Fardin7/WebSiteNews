@@ -20,7 +20,6 @@ D:\Project_backup\New folder\WebSiteNews\Resource\obj\Debug\Resource.dll
 D:\Project_backup\New folder\WebSiteNews\Resource\obj\Debug\Resource.pdb
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\bin\Debug\Resource.dll
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\bin\Debug\Resource.pdb
-D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.csprojAssemblyReference.cache
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.Resource.resources
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.csproj.GenerateResource.cache
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.dll
@@ -28,3 +27,5 @@ D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.pdb
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\bin\Debug\fa-IR\Resource.resources.dll
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.Resource.fa-IR.resources
 D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\fa-IR\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.csproj.AssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Resource\obj\Debug\Resource.csproj.CoreCompileInputs.cache

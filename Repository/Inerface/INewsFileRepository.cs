@@ -7,10 +7,8 @@ using DAL;
 using Model;
 namespace Repository.Inerface
 {
-  public  interface INewsFileRepository : IRepository<NewsFile>
+    public interface INewsFileRepository : IRepository<NewsFile>
     {
 
-
-       
     }
 }

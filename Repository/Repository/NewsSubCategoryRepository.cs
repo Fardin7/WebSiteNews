@@ -11,16 +11,12 @@ using System.Linq.Expressions;
 
 namespace Repository.Repository
 {
-   public class NewsSubCategoryRepository : GenericRepository<NewsSubCategory>, INewsSubCategoryRepository
+    public class NewsSubCategoryRepository : GenericRepository<NewsSubCategory>, INewsSubCategoryRepository
     {
         private DbContext _context;
-      // internal DbSet<Article> dbSet;
         public NewsSubCategoryRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             this._context = unitOfWork.DBContext;
-
-           
-
 
         }
 
@@ -29,14 +25,6 @@ namespace Repository.Repository
             return _context.Set<NewsSubCategory>().Where(q => q.Title == title).FirstOrDefault();
         }
 
-        public int GetCount()
-        {
-             
-               var b=  dbSet.Count();
-            return b;
-               
-        }
 
-      
     }
 }

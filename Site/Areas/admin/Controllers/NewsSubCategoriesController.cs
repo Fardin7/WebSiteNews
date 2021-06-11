@@ -33,22 +33,6 @@ namespace Site.Area.admin.Controllers
             return View(_newssubcategoryService.Get());
         }
 
-
-        // GET: NewsSubCategories/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    NewsSubCategory newsSubCategory = db.NewsSubCategories.Find(id);
-        //    if (newsSubCategory == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(newsSubCategory);
-        //}
-
         //// GET: NewsSubCategories/Create
         public ActionResult Create()
         {
@@ -63,8 +47,6 @@ namespace Site.Area.admin.Controllers
         }
         
         // POST: NewsSubCategories/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         //[ValidateAntiForgeryToken]
         public string Create([Bind(Include = "Id,Title,IsActive,CreateDate,NewsCategoryId,NewsSubCategoryId")] NewsSubCategory newsSubCategory)
@@ -108,8 +90,6 @@ namespace Site.Area.admin.Controllers
         }
 
         //// POST: NewsSubCategories/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
        // [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Title,IsActive,CreateDate,NewsCategoryId,NewsSubCategoryId")] NewsSubCategory newsSubCategory)
@@ -146,25 +126,5 @@ namespace Site.Area.admin.Controllers
             }
            
         }
-
-        //// POST: NewsSubCategories/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    NewsSubCategory newsSubCategory = db.NewsSubCategories.Find(id);
-        //    db.NewsSubCategories.Remove(newsSubCategory);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }

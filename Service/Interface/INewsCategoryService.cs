@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 using Model;
 namespace Service.Interface
 {
-  public  interface INewsCategoryService:Iservice<NewsCategory>
+    public interface INewsCategoryService : Iservice<NewsCategory>
     {
-
         NewsCategory GetByTitle(string title);
         IQueryable<IGrouping<string, News>> LastNewsOfNewsCategory(int newstype);
     }

@@ -15,10 +15,6 @@ namespace Site.Controllers
         private readonly Iservice<Contact> _service;
         private readonly IContactService _contactService;
         private readonly IUnitOfWork _unitOfWork;
-
-
-
-        //  private Context db = new Context();
         public ContactController(Iservice<Contact> service, IContactService contactService, IUnitOfWork unitOfWork)
         {
             _service = service;

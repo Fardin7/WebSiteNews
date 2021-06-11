@@ -16,24 +16,10 @@ namespace Site.Controllers
 
         protected override void OnActionExecuting(ActionExecutingContext filterContext)
         {
-            
+
             base.OnActionExecuting(filterContext);
         }
 
-        //protected override void OnActionExecuting(ActionExecutingContext filterContext)
-        //{
-
-
-        //    Thread.CurrentThread.CurrentUICulture = new CultureInfo("fa-IR");
-        //    base.OnActionExecuting(filterContext);
-
-        //}
-        //protected override void ExecuteCore()
-        //{
-
-
-        //    base.ExecuteCore();
-        //}
 
         protected override void OnException(ExceptionContext filterContext)
         {
@@ -48,7 +34,6 @@ namespace Site.Controllers
             var action = filterContext.RequestContext.RouteData.Values["action"];
             var controller = filterContext.RequestContext.RouteData.Values["controller"];
             Logger.Error(string.Format("{0} Error in {1} action and {2} controller , Error Code is {3}", message, action, controller, statuscode), ex);
-            // Response.Redirect("/Home/Error");
             filterContext.Result = new ViewResult()
             {
                 ViewName = "Error",

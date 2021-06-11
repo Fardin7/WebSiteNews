@@ -32,21 +32,6 @@ namespace Site.Area.admin.Controllers
             return View(_categoryService.Get());
         }
 
-        // GET: Categories/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Category category = db.Categories.Find(id);
-        //    if (category == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(category);
-        //}
-
         // GET: Categories/Create
         public ActionResult CreatePartial()
         {
@@ -87,9 +72,9 @@ namespace Site.Area.admin.Controllers
                 _service.Insert(category);
                 _unitOfWork.Complete(true);
 
-    
-               
-                
+
+
+
                 Categores.AddRange(_categoryService.Get().Select(z =>
                     new Category
                     {
@@ -101,7 +86,7 @@ namespace Site.Area.admin.Controllers
 
                     ).ToList());
 
-                        return serializer.Serialize(Categores);
+                return serializer.Serialize(Categores);
             }
 
             return "error";
@@ -164,13 +149,13 @@ namespace Site.Area.admin.Controllers
                 _service.Delete(id);
                 _unitOfWork.Complete();
                 JavaScriptSerializer serializer = new JavaScriptSerializer();
-                List<object> Categores = new List<object>();               
+                List<object> Categores = new List<object>();
                 Categores.AddRange(_categoryService.Get().Select(z =>
                     new Category
                     {
                         Id = z.Id,
                         Title = z.Title,
-                       ImageAddress=z.ImageAddress
+                        ImageAddress = z.ImageAddress
 
                     }
 
@@ -183,7 +168,7 @@ namespace Site.Area.admin.Controllers
 
                 return ex.Message;
             }
-           
+
         }
 
         [HttpPost]
@@ -216,25 +201,5 @@ namespace Site.Area.admin.Controllers
             }
 
         }
-
-        //// POST: Categories/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Category category = db.Categories.Find(id);
-        //    db.Categories.Remove(category);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }

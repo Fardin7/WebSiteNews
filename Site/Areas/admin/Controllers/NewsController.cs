@@ -45,12 +45,10 @@ namespace Site.Area.admin.Controllers
 
         }
 
-        // GET: Articles
-    //    [OutputCache(Duration = 180,Location =OutputCacheLocation.Server)]
-       
+        // GET: Articles 
         public ActionResult Index()
         {
-            var article = _service.Get(/*includeProperties: "Title"*/).ToList();
+            var article = _service.Get().ToList();
             return View(article);
         }
 
@@ -74,10 +72,6 @@ namespace Site.Area.admin.Controllers
         public ActionResult Create()
         {
 
-
-            //Remove the item from cache    
-            // HttpResponse.RemoveOutputCacheItem("/News/Index");
-            //RemoveOutputCacheItem(staleItem);
             try
             {
                 FileManagement._fileManagement = null;
@@ -190,8 +184,6 @@ namespace Site.Area.admin.Controllers
 
         }
         // POST: Articles/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -274,8 +266,6 @@ namespace Site.Area.admin.Controllers
         }
 
         // POST: Articles/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateInput(false)]
@@ -352,7 +342,6 @@ namespace Site.Area.admin.Controllers
         {
 
             List<object> newsSubCategores = new List<object>();
-            /// List<Subcategory> subCategores = new List<Subcategory>();
             JavaScriptSerializer serializer = new JavaScriptSerializer();
             string jsonString = "";
             if (categorytype == "NewsSubcategoryId")
@@ -388,14 +377,5 @@ namespace Site.Area.admin.Controllers
             return jsonString;
 
         }
-
-        //    protected override void Dispose(bool disposing)
-        //    {
-        //        if (disposing)
-        //        {
-        //            db.Dispose();
-        //        }
-        //        base.Dispose(disposing);
-        //    }
     }
 }

@@ -31,24 +31,8 @@ namespace Site.Area.admin.Controllers
         // GET: Subcategories
         public ActionResult Index()
         {
-            //var subcategories = db.Subcategories.Include(s => s.Category).Include(s => s.Subcategory2);
             return View(_subcategoryService.Get());
         }
-
-        //// GET: Subcategories/Details/5
-        //public ActionResult Details(int? id)
-        //{
-        //    if (id == null)
-        //    {
-        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-        //    }
-        //    Subcategory subcategory = db.Subcategories.Find(id);
-        //    if (subcategory == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    return View(subcategory);
-        //}
 
         // GET: Subcategories/Create
         public ActionResult Create()
@@ -64,8 +48,6 @@ namespace Site.Area.admin.Controllers
             //
         }
         // POST: Subcategories/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
        // [ValidateAntiForgeryToken]
         public string Create([Bind(Include = "Id,Title,IsActive,ImageAddress,CategoryId,SubcategoryId")] Subcategory subcategory)
@@ -125,8 +107,6 @@ namespace Site.Area.admin.Controllers
         }
 
         //// POST: Subcategories/Edit/5
-        //// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        //// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Title,IsActive,ImageAddress,CategoryId,SubcategoryId")] Subcategory subcategory)
@@ -211,25 +191,5 @@ namespace Site.Area.admin.Controllers
             }
 
         }
-
-        //// POST: Subcategories/Delete/5
-        //[HttpPost, ActionName("Delete")]
-        //[ValidateAntiForgeryToken]
-        //public ActionResult DeleteConfirmed(int id)
-        //{
-        //    Subcategory subcategory = db.Subcategories.Find(id);
-        //    db.Subcategories.Remove(subcategory);
-        //    db.SaveChanges();
-        //    return RedirectToAction("Index");
-        //}
-
-        //protected override void Dispose(bool disposing)
-        //{
-        //    if (disposing)
-        //    {
-        //        db.Dispose();
-        //    }
-        //    base.Dispose(disposing);
-        //}
     }
 }

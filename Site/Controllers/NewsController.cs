@@ -23,7 +23,7 @@ namespace Site.Controllers
         private readonly INewsCategoryService _newscategoryService;
         private readonly INewsSubCategoryService _newssubCategoryService;
         private readonly INewsFileService _newsFileService;
-        //  private Context db = new Context();
+
         public NewsController(Iservice<News> service, INewsService newsService, IUnitOfWork unitOfWork, ICategoryService categoryService,
           ISubCategoryService subCategoryService, INewsCategoryService newscategoryService, INewsSubCategoryService newsSubCategoryService
             , INewsFileService newsFileService)
@@ -38,27 +38,24 @@ namespace Site.Controllers
             _newsFileService = newsFileService;
         }
         // GET: user/News
-        public  ActionResult Index(int type, string categoryname, string newscategoryname)
+        public ActionResult Index(int type, string categoryname, string newscategoryname)
         {
-            
-           
+
+
             var newscategoryid = 0;
             var categoryid = 0;
-            if (newscategoryname!=null)
+            if (newscategoryname != null)
             {
-                newscategoryid= _newscategoryService.Get(q => q.Title == newscategoryname).FirstOrDefault().Id;
+                newscategoryid = _newscategoryService.Get(q => q.Title == newscategoryname).FirstOrDefault().Id;
 
             }
-            if (categoryname!=null)
+            if (categoryname != null)
             {
-                categoryid= _categoryService.Get(q => q.Title == categoryname).FirstOrDefault().Id;
+                categoryid = _categoryService.Get(q => q.Title == categoryname).FirstOrDefault().Id;
 
             }
-
-            //  Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("fa-IR");
-            var newstype = type;
-                //(int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
-
+           
+            var newstype = type;           
             var model = _newsService.ListNewsOfNewsCategoryAndCategory(newstype, categoryname, newscategoryname, 4);
             double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname || q.Subcategory.Category.Title == categoryname).Where(q => q.NewsType == newstype && q.IsActive && q.PublishDate <= DateTime.Now).Count();
             pagecount = Math.Ceiling(pagecount / 4);
@@ -73,9 +70,9 @@ namespace Site.Controllers
                     Description = item.Description,
                     ImageAddress = item.ImageAddress,
                     PublishDate = item.PublishDate.Value,
-                    NewsCategoryTitle=item.NewsSubCategory.NewsCategory.Title,
-                    SubCategoryTitle=item.Subcategory.Title,
-                    PageNumber=3,
+                    NewsCategoryTitle = item.NewsSubCategory.NewsCategory.Title,
+                    SubCategoryTitle = item.Subcategory.Title,
+                    PageNumber = 3,
                     Pages = pagecount,
                     Title = item.Title,
                     Url = Url.RouteUrl("news", new { type = type, cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
@@ -91,7 +88,7 @@ namespace Site.Controllers
 
 
             var model = _newsService.ListNewsOfNewsCategoryAndCategory(type, categoryname, newscategoryname, count);
-            double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname && q.Subcategory.Title == categoryname && q.NewsType == type && q.IsActive && q.PublishDate<=DateTime.Now).Count();
+            double pagecount = _service.Get(q => q.NewsSubCategory.NewsCategory.Title == newscategoryname && q.Subcategory.Title == categoryname && q.NewsType == type && q.IsActive && q.PublishDate <= DateTime.Now).Count();
             pagecount = Math.Ceiling((double)pagecount / count);
 
             ViewBag.pagecount = pagecount;
@@ -99,27 +96,27 @@ namespace Site.Controllers
         }
 
         public string NewsOfNewsCategoryAndCategoryPaging(int type, int categoryname, int newscategoryname, int count, int pagenumber)
-        {         
+        {
             var model = _newsService.RelatedNewsPagin(type, categoryname, newscategoryname, count, pagenumber);
             var news = new List<NewsIndexPaging>();
             foreach (var item in model)
             {
                 news.Add(new NewsIndexPaging()
                 {
-          
+
                     Description = item.Description,
                     ImageAddress = item.ImageAddress,
                     PublishDate = item.PublishDate,
                     NewsCategoryTitle = item.NewsSubCategory.NewsCategory.Title,
                     SubCategoryTitle = item.Subcategory.Title,
                     PageNumber = 3,
-                
+
                     Title = item.Title,
                     Url = Url.RouteUrl("news", new { type = type, cattegory = item.Subcategory.Title, newscattegory = item.NewsSubCategory.NewsCategory.Title, id = item.Title })
 
 
 
-                });;
+                }); ;
             }
             return JsonConvert.SerializeObject(news);
         }
@@ -127,9 +124,8 @@ namespace Site.Controllers
         // GET: user/News/Details/5
         public ActionResult Details(string id, int type)
         {
-            
+
             var typeint = type;
-                //(int)Enum.Parse(typeof(NewsType), CultureHelper.EnumLocalizeValueToName(type, Thread.CurrentThread.CurrentUICulture));
             return View(_newsService.GetByTitleAndType(id, typeint));
 
         }
@@ -172,7 +168,7 @@ namespace Site.Controllers
 
         public ActionResult TrendingNews(int count)
         {
-            return  PartialView("_TrendNews", _service.Get(q => q.IsTrend == true).OrderByDescending(q => q.TrendingDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(count).ToList());
+            return PartialView("_TrendNews", _service.Get(q => q.IsTrend == true).OrderByDescending(q => q.TrendingDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(count).ToList());
         }
         public ActionResult BannerNews()
         {

@@ -13,13 +13,9 @@ namespace Repository.Repository
     public class NewsCategoryRepository : GenericRepository<NewsCategory>, INewsCategoryRepository
     {
         private DbContext _context;
-        // internal DbSet<Article> dbSet;
         public NewsCategoryRepository(IUnitOfWork unitOfWork) : base(unitOfWork)
         {
             this._context = unitOfWork.DBContext;
-
-
-
 
         }
 
@@ -27,16 +23,7 @@ namespace Repository.Repository
         {
             return _context.Set<NewsCategory>().Where(q => q.Title == title).FirstOrDefault();
         }
-
-        public int GetCount()
-        {
-
-            var b = dbSet.Count();
-            return b;
-
-        }
-
-        public IQueryable<IGrouping<string,News>> LastNewsOfNewsCategory( int newstype)
+        public IQueryable<IGrouping<string, News>> LastNewsOfNewsCategory(int newstype)
         {
             var newsofcategory = (from newscategory in dbSet
                                   join newssubcategory in _context.Set<NewsSubCategory>()
@@ -44,13 +31,10 @@ namespace Repository.Repository
                                   join news in _context.Set<News>()
                                   on newssubcategory.Id equals news.NewsSubcategoryId into categorysubcategorynews
                                   from csn in categorysubcategorynews
-                                  where csn.NewsType==newstype && csn.IsActive
+                                  where csn.NewsType == newstype && csn.IsActive
                                   orderby csn.PublishDate descending
                                   group csn by newscategory.Title
                                  );
-                               ;
-           
-
             return newsofcategory;
         }
     }

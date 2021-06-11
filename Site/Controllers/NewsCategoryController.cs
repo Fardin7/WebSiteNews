@@ -16,12 +16,8 @@ namespace Site.Controllers
         private readonly Iservice<NewsCategory> _service;
         private readonly INewsService _newsService;
         private readonly INewsCategoryService _newscategoryService;
-        private readonly INewsSubCategoryService _newssubCategoryService;
-        private readonly INewsFileService _newsFileService;
-        //  private Context db = new Context();
-        public NewsCategoryController(Iservice<NewsCategory> service, INewsService newsService, ICategoryService categoryService,
-          ISubCategoryService subCategoryService, INewsCategoryService newscategoryService, INewsSubCategoryService newsSubCategoryService
-            , INewsFileService newsFileService)
+        public NewsCategoryController(Iservice<NewsCategory> service, INewsService newsService,
+           INewsCategoryService newscategoryService)
         {
             _newscategoryService = newscategoryService;
             _newsService = newsService;
@@ -55,9 +51,6 @@ namespace Site.Controllers
                              Title = news.Key,
                              News = news.OrderByDescending(a => a.PublishDate).Where(q => q.PublishDate <= DateTime.Now && q.IsActive).Take(newscount).ToList()
                          }).ToList();
-
-
-
             return PartialView("_ListNewsOfNewsCategory", model);
         }
 
@@ -99,7 +92,7 @@ namespace Site.Controllers
             var list = new List<LastNews>();
             for (int i = 0; i < model.News.Count; i++)
             {
-                list.Add(new Site.LastNews()
+                list.Add(new LastNews()
                 {
                     Title = model.News[i].Title,
                     ImageAddress = model.News[i].ImageAddress,

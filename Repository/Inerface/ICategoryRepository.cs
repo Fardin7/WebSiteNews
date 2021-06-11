@@ -9,7 +9,6 @@ namespace Repository.Inerface
 {
   public  interface ICategoryRepository:IRepository<Category>
     {
-
         IQueryable<IGrouping<string, News>> LastNewsOfCategory(int newstype);
         Category GetByTitle(string title);
     }

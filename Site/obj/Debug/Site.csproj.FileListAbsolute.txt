@@ -507,8 +507,10 @@ D:\Projectbackup\Newfolder\WebSiteNews\Site\bin\System.Web.Webpages.Razor.xml
 D:\Projectbackup\Newfolder\WebSiteNews\Site\bin\System.Web.Helpers.xml
 D:\Projectbackup\Newfolder\WebSiteNews\Site\bin\System.Web.Mvc.xml
 D:\Projectbackup\Newfolder\WebSiteNews\Site\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Projectbackup\Newfolder\WebSiteNews\Site\obj\Debug\Site.csprojAssemblyReference.cache
 D:\Projectbackup\Newfolder\WebSiteNews\Site\obj\Debug\Site.csproj.CopyComplete
 D:\Projectbackup\Newfolder\WebSiteNews\Site\obj\Debug\Site.dll
 D:\Projectbackup\Newfolder\WebSiteNews\Site\obj\Debug\Site.pdb
 D:\Projectbackup\Newfolder\WebSiteNews\Site\bin\fa-IR\Resource.resources.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Site\bin\System.Threading.Tasks.Extensions.dll
+D:\Projectbackup\Newfolder\WebSiteNews\Site\obj\Debug\Site.csproj.AssemblyReference.cache
+D:\Projectbackup\Newfolder\WebSiteNews\Site\obj\Debug\Site.csproj.CoreCompileInputs.cache

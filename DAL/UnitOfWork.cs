@@ -11,12 +11,11 @@ namespace DAL
     public class UnitOfWork : IUnitOfWork
     {
         public DbContext dbcontext = null;
-        public UnitOfWork(/*string ConnectionString*/DbContext dbContext)
+        public UnitOfWork(DbContext dbContext)
         {
-            if (dbcontext==null)
+            if (dbcontext == null)
             {
                 dbcontext = dbContext;
-                    ///new ApplicationDbContext(ConnectionString);
 
             }
 

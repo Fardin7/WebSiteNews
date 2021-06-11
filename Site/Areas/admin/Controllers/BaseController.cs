@@ -9,48 +9,29 @@ using System.Web.Mvc;
 
 namespace Site.Area.admin.Controllers
 {
-   [CustomAuthorize]
+    [CustomAuthorize]
     public class BaseController : Controller
     {
         private static readonly ILog Logger = LogManager.GetLogger(System.Environment.MachineName);
-    //protected override void ExecuteCore()
-    //{
-    //    int culture = 0;
-    //    if (this.Session == null || this.Session["CurrentCulture"] == null)
-    //    {
-
-    //       // int.TryParse(System.Configuration.ConfigurationManager.AppSettings["Culture"], out culture);
-    //        this.Session["CurrentCulture"] = culture;
-    //    }
-    //    else
-    //    {
-    //        culture = (int)this.Session["CurrentCulture"];
-    //    }
-    //    // calling CultureHelper class properties for setting  
-    //    CultureHelper.CurrentCulture = culture;
-
-    //    base.ExecuteCore();
-    //}
-    [AllowAnonymous]
-    protected override void OnException(ExceptionContext filterContext)
-    {
-        var ex = filterContext.Exception;
-        var message = ex.Message;
-        var statuscode = 0;
-        if (filterContext.Exception is HttpException)
+        protected override void OnException(ExceptionContext filterContext)
         {
-            statuscode = ((HttpException)filterContext.Exception).GetHttpCode();
+            var ex = filterContext.Exception;
+            var message = ex.Message;
+            var statuscode = 0;
+            if (filterContext.Exception is HttpException)
+            {
+                statuscode = ((HttpException)filterContext.Exception).GetHttpCode();
+            }
+            filterContext.ExceptionHandled = true;
+            var action = filterContext.RequestContext.RouteData.Values["action"];
+            var controller = filterContext.RequestContext.RouteData.Values["controller"];
+            System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr3.txt"), message + "  " + action + "  " + controller);
+            Logger.Error(string.Format("{0} Error in {1} action and {2} controller , Error Code is {3}", message, action, controller, statuscode), ex);
+            filterContext.Result = new ViewResult()
+            {
+                ViewName = "Error",
+
+            };
         }
-        filterContext.ExceptionHandled = true;
-        var action = filterContext.RequestContext.RouteData.Values["action"];
-        var controller = filterContext.RequestContext.RouteData.Values["controller"];
-        System.IO.File.WriteAllText(Server.MapPath("~/Content/errrr3.txt"), message + "  " + action + "  " + controller);
-        Logger.Error(string.Format("{0} Error in {1} action and {2} controller , Error Code is {3}", message, action, controller, statuscode), ex);
-        filterContext.Result = new ViewResult()
-        {
-            ViewName = "Error",
-
-        };
     }
-}
 }

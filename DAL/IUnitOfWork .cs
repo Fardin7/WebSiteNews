@@ -8,14 +8,13 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-  public  interface IUnitOfWork
+    public interface IUnitOfWork
     {
 
-        DbContext DBContext { get;  }
-
+        DbContext DBContext { get; }
         DbContextTransaction BeginTransaction();
         int Complete();
         int Complete(bool usingTransaction);
-       // IUnitOfWork New();
+        
     }
 }

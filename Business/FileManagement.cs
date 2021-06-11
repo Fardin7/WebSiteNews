@@ -17,7 +17,7 @@ namespace Business
         public bool delete { get; set; }
         public int FileId { get; set; }
         public int NewsId { get; set; }
-        public  string Name { get; set; }
+        public string Name { get; set; }
         public string Type { get; set; }
         public int Size { get; set; }
         public string Address { get; set; }
@@ -28,7 +28,7 @@ namespace Business
 
         }
 
-        public static void UploadFile(string type, string name, int size, string address, HttpPostedFileBase file,int fileid=0)
+        public static void UploadFile(string type, string name, int size, string address, HttpPostedFileBase file, int fileid = 0)
         {
             if (_fileManagement == null)
             {
@@ -39,13 +39,13 @@ namespace Business
             _fileManagement.Size = size;
             _fileManagement.Address = address;
             _fileManagement.File = file;
-            if (_fileManagement.FileId==0)
+            if (_fileManagement.FileId == 0)
             {
                 _fileManagement.FileId = fileid;
             }
-           
+
         }
-         public static void InsertFile(News news, INewsFileService newsFileService)
+        public static void InsertFile(News news, INewsFileService newsFileService)
         {
             if (_fileManagement != null && _fileManagement.FileId == 0)
             {
@@ -62,16 +62,14 @@ namespace Business
                 };
                 newsFileService.Insert(newsfileid);
                 _fileManagement = null;
-                //_fileManagement.FileId = newsfileid.Id;
-                //_fileManagement.File = null;
             }
-            else if (_fileManagement != null && _fileManagement.FileId != 0 && _fileManagement.File!=null)
+            else if (_fileManagement != null && _fileManagement.FileId != 0 && _fileManagement.File != null)
             {
-                
+
                 _fileManagement.File.SaveAs(_fileManagement.Address);
                 newsFileService.Update(new NewsFile()
                 {
-                    Id=_fileManagement.FileId,
+                    Id = _fileManagement.FileId,
                     Name = _fileManagement.Name,
                     NewsId = news.Id,
                     Type = _fileManagement.Type,
@@ -79,11 +77,11 @@ namespace Business
                     UploadDate = DateTime.Now
 
                 });
-        
+
             }
-            
+
         }
-        
+
         public static void DeleteFile(INewsFileService newsFileService)
         {
             System.IO.File.Delete(_fileManagement.Address);
@@ -91,7 +89,7 @@ namespace Business
             _fileManagement = null;
         }
 
-        }
-
     }
+
+}
 
